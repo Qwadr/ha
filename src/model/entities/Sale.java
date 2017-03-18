@@ -1,23 +1,22 @@
-package entities;
+package model.entities;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.Map;
 
 /**
- * Created by Qwadr on 09.03.2017 at 18:30.
+ * "Sale" entity. More information will be added later.
  */
 public class Sale {
     private int saleID;
     private Date saleDate;
-    private HashMap<Device, Integer> devices;
+    private Map<Device, Integer> devices;
     private Client client;
 
     private static int numberOfSales;
 
-    public Sale(Client client, Date saleDate, HashMap<Device, Integer> devices) {
+    public Sale(Client client, Date saleDate, Map<Device, Integer> devices) {
         this.saleID = ++numberOfSales;
         this.saleDate = saleDate;
         this.devices = devices;

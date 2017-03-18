@@ -1,10 +1,10 @@
-package entities;
+package model.entities;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
- * Created by Qwadr on 09.03.2017 at 18:30.
+ * "Client" entity. More information will be added later.
  */
 public class Client {
     private int clientID;

@@ -1,6 +1,6 @@
-package entities;
+package model.entities;
 
-import entities.enums.DeviceType;
+import model.entities.enums.DeviceType;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -8,7 +8,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
- * Created by Qwadr on 09.03.2017 at 18:31.
+ * "Device" entity. More information will be added later.
  */
 public class Device {
     private int deviceID;

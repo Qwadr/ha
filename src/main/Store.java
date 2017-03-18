@@ -1,10 +1,12 @@
 package main;
 
 import console.ConsoleImpl;
-import entities.Client;
-import entities.Device;
-import entities.enums.DeviceType;
-import model.*;
+import model.entities.Client;
+import model.entities.Device;
+import model.entities.enums.DeviceType;
+import model.impl.ClientsImpl;
+import model.impl.DevicesImpl;
+import model.impl.SalesImpl;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -18,9 +20,9 @@ import java.util.HashMap;
  */
 public class Store {
     static boolean running = true;
-    public static Clients clients;
-    public static Devices devices;
-    public static Sales sales;
+    public static ClientsImpl clients;
+    public static DevicesImpl devices;
+    public static SalesImpl sales;
 
     public static void main(String[] args) throws ParseException {
         ConsoleImpl console = new ConsoleImpl();
@@ -30,9 +32,9 @@ public class Store {
     }
 
     static {
-        clients = new Clients();
-        devices = new Devices();
-        sales = new Sales();
+        clients = new ClientsImpl();
+        devices = new DevicesImpl();
+        sales = new SalesImpl();
 
         try {
             clients.addClient("Anton", "Antonov", "Antonovich",

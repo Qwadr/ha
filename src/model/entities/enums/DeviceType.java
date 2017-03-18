@@ -1,7 +1,7 @@
-package entities.enums;
+package model.entities.enums;
 
 /**
- * Created by Qwadr on 09.03.2017 at 20:06.
+ * All variations of device types.
  */
 public enum DeviceType {
     TELEPHONE,

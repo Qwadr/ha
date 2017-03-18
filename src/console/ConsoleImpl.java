@@ -1,9 +1,9 @@
 package console;
 
-import entities.Client;
-import entities.Device;
-import entities.Sale;
-import entities.enums.DeviceType;
+import model.entities.Client;
+import model.entities.Device;
+import model.entities.Sale;
+import model.entities.enums.DeviceType;
 import main.Store;
 
 import java.awt.*;
@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -199,7 +200,7 @@ public class ConsoleImpl {
         System.out.println("Enter \"<DeviceID> <Count>\" pairs (enter '0' to finish): ");
         int deviceID = scanner.nextInt();
         int count;
-        HashMap<Device, Integer> devices = new HashMap<>();
+        Map<Device, Integer> devices = new HashMap<>();
         while (deviceID != 0) {
             count = scanner.nextInt();
             Device currentDevice = Store.findDevice(deviceID);

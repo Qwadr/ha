@@ -6,7 +6,7 @@ import model.entities.Sale;
 import model.entities.enums.DeviceType;
 import main.Store;
 
-import java.awt.*;
+import java.awt.Color;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -64,18 +64,18 @@ public class ConsoleImpl {
     private void printAllInfo() {
         System.out.println("All info:");
 
-        System.out.println("We have " + Store.clients.getClients().size() + " clients: ");
-        for (Client client : Store.clients.getClients()) {
+        System.out.println("We have " + Store.clients.getListOfClients().size() + " clients: ");
+        for (Client client : Store.clients.getListOfClients()) {
             System.out.println(client.toString());
         }
 
-        System.out.println("We have " + Store.devices.getDevices().size() + " devices: ");
-        for (Device device : Store.devices.getDevices()) {
+        System.out.println("We have " + Store.devices.getListOfDevices().size() + " devices: ");
+        for (Device device : Store.devices.getListOfDevices()) {
             System.out.println(device.toString());
         }
 
-        System.out.println("We have " + Store.sales.getSales().size() + " sales: ");
-        for (Sale sale : Store.sales.getSales()) {
+        System.out.println("We have " + Store.sales.getListOfSales().size() + " sales: ");
+        for (Sale sale : Store.sales.getListOfSales()) {
             System.out.println(sale.toString());
         }
 

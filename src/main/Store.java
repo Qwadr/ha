@@ -1,12 +1,13 @@
 package main;
 
 import console.ConsoleImpl;
+import model.Clients;
+import model.Devices;
+import model.Sales;
 import model.entities.Client;
 import model.entities.Device;
 import model.entities.enums.DeviceType;
-import model.impl.ClientsImpl;
-import model.impl.DevicesImpl;
-import model.impl.SalesImpl;
+import model.factories.DAOFactory;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -20,9 +21,9 @@ import java.util.HashMap;
  */
 public class Store {
     static boolean running = true;
-    public static ClientsImpl clients;
-    public static DevicesImpl devices;
-    public static SalesImpl sales;
+    public static Clients clients;
+    public static Devices devices;
+    public static Sales sales;
 
     public static void main(String[] args) throws ParseException {
         ConsoleImpl console = new ConsoleImpl();
@@ -32,9 +33,9 @@ public class Store {
     }
 
     static {
-        clients = new ClientsImpl();
-        devices = new DevicesImpl();
-        sales = new SalesImpl();
+        clients = DAOFactory.getExemplarOfClientsClass();
+        devices = DAOFactory.getExemplarOfDevicesClass();
+        sales = DAOFactory.getExemplarOfSalesClass();
 
         try {
             clients.addClient("Anton", "Antonov", "Antonovich",
@@ -66,7 +67,7 @@ public class Store {
     }
 
     public static Client findClient(int clientID) {
-        for (Client client : Store.clients.getClients()) {
+        for (Client client : Store.clients.getListOfClients()) {
             if (client.getClientID() == clientID) {
                 return client;
             }
@@ -75,7 +76,7 @@ public class Store {
     }
 
     public static Device findDevice(int deviceID) {
-        for (Device device : Store.devices.getDevices()) {
+        for (Device device : Store.devices.getListOfDevices()) {
             if (device.getDeviceID() == deviceID) {
                 return device;
             }

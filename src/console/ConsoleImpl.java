@@ -4,7 +4,7 @@ import entities.Client;
 import entities.Device;
 import entities.Sale;
 import entities.enums.DeviceType;
-import main.App;
+import main.Store;
 
 import java.awt.*;
 import java.lang.reflect.Field;
@@ -16,11 +16,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * Created by Qwadr on 09.03.2017 at 21:18.
+ * Implementation of console interaction.
  */
 public class ConsoleImpl {
     private boolean running;
-    static Scanner scanner;
+    private static Scanner scanner;
 
     public void start() {
         scanner = new Scanner(System.in);
@@ -63,18 +63,18 @@ public class ConsoleImpl {
     private void printAllInfo() {
         System.out.println("All info:");
 
-        System.out.println("We have " + App.clients.getClients().size() + " clients: ");
-        for (Client client : App.clients.getClients()) {
+        System.out.println("We have " + Store.clients.getClients().size() + " clients: ");
+        for (Client client : Store.clients.getClients()) {
             System.out.println(client.toString());
         }
 
-        System.out.println("We have " + App.devices.getDevices().size() + " devices: ");
-        for (Device device : App.devices.getDevices()) {
+        System.out.println("We have " + Store.devices.getDevices().size() + " devices: ");
+        for (Device device : Store.devices.getDevices()) {
             System.out.println(device.toString());
         }
 
-        System.out.println("We have " + App.sales.getSales().size() + " sales: ");
-        for (Sale sale : App.sales.getSales()) {
+        System.out.println("We have " + Store.sales.getSales().size() + " sales: ");
+        for (Sale sale : Store.sales.getSales()) {
             System.out.println(sale.toString());
         }
 
@@ -104,7 +104,7 @@ public class ConsoleImpl {
             }
         }
 
-        App.clients.addClient(firstName, secondName, thirdName, birthDate);
+        Store.clients.addClient(firstName, secondName, thirdName, birthDate);
         System.out.println("Success! Client added.");
     }
 
@@ -165,7 +165,7 @@ public class ConsoleImpl {
             }
         }
 
-        App.devices.addDevice(deviceType, brand, model, color, price, releaseDate);
+        Store.devices.addDevice(deviceType, brand, model, color, price, releaseDate);
         System.out.println("Success! Device added.");
     }
 
@@ -175,7 +175,7 @@ public class ConsoleImpl {
         while (!correctValue) {
             System.out.println("Client ID: ");
             int clientID = scanner.nextInt();
-            client = App.findClient(clientID);
+            client = Store.findClient(clientID);
             if (client != null) {
                 correctValue = true;
             } else {
@@ -202,7 +202,7 @@ public class ConsoleImpl {
         HashMap<Device, Integer> devices = new HashMap<>();
         while (deviceID != 0) {
             count = scanner.nextInt();
-            Device currentDevice = App.findDevice(deviceID);
+            Device currentDevice = Store.findDevice(deviceID);
             int currentCount = devices.getOrDefault(deviceID, 0);
             devices.put(currentDevice, currentCount + count);
 
@@ -210,7 +210,7 @@ public class ConsoleImpl {
         }
 
 
-        App.sales.addSale(client, saleDate, devices);
+        Store.sales.addSale(client, saleDate, devices);
         System.out.println("Success! Sale added.");
     }
 

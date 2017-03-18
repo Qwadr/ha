@@ -14,9 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 /**
- * Created by Qwadr on 09.03.2017 at 20:29.
+ * Main class of the application.
  */
-public class App {
+public class Store {
     static boolean running = true;
     public static Clients clients;
     public static Devices devices;
@@ -64,7 +64,7 @@ public class App {
     }
 
     public static Client findClient(int clientID) {
-        for (Client client : App.clients.getClients()) {
+        for (Client client : Store.clients.getClients()) {
             if (client.getClientID() == clientID) {
                 return client;
             }
@@ -73,7 +73,7 @@ public class App {
     }
 
     public static Device findDevice(int deviceID) {
-        for (Device device : App.devices.getDevices()) {
+        for (Device device : Store.devices.getDevices()) {
             if (device.getDeviceID() == deviceID) {
                 return device;
             }

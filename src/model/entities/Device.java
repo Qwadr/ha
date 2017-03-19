@@ -2,7 +2,7 @@ package model.entities;
 
 import model.entities.enums.DeviceType;
 
-import java.awt.*;
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.SimpleDateFormat;

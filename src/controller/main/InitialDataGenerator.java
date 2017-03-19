@@ -7,9 +7,10 @@ import model.entities.Device;
 import model.entities.enums.DeviceType;
 import model.factories.DAOFactory;
 
-import java.awt.*;
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
@@ -53,7 +54,7 @@ public class InitialDataGenerator {
             devices.put(Store.findDevice(2), 4);
             devices.put(Store.findDevice(3), 7); // 13 devices summary
             sales.addSale(Store.findClient(1), new Date(System.currentTimeMillis()), devices);
-        } catch (Exception ignored) {
+        } catch (ParseException ignored) {
         }
     }
 

@@ -8,7 +8,7 @@ import model.impl.DevicesImpl;
 import model.impl.SalesImpl;
 
 /**
- * Class outputs realisations of three main interfaces.
+ * Class outputs realisations of three controller.main interfaces.
  */
 public class DAOFactory {
     public static Clients getExemplarOfClientsClass() {

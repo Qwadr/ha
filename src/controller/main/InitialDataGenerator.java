@@ -1,10 +1,8 @@
-package main;
+package controller.main;
 
-import console.ConsoleImpl;
 import model.Clients;
 import model.Devices;
 import model.Sales;
-import model.entities.Client;
 import model.entities.Device;
 import model.entities.enums.DeviceType;
 import model.factories.DAOFactory;
@@ -12,30 +10,24 @@ import model.factories.DAOFactory;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 /**
- * Main class of the application.
+ * Creating system state at start of our program.
  */
-public class Store {
-    static boolean running = true;
-    public static Clients clients;
-    public static Devices devices;
-    public static Sales sales;
+public class InitialDataGenerator {
+    private static Clients clients;
+    private static Devices devices;
+    private static Sales sales;
 
-    public static void main(String[] args) throws ParseException {
-        ConsoleImpl console = new ConsoleImpl();
-
-        console.start();
-
-    }
-
-    static {
-        clients = DAOFactory.getExemplarOfClientsClass();
-        devices = DAOFactory.getExemplarOfDevicesClass();
-        sales = DAOFactory.getExemplarOfSalesClass();
+    public static void addInitialData() {
+        Store.clients = DAOFactory.getExemplarOfClientsClass();
+        Store.devices = DAOFactory.getExemplarOfDevicesClass();
+        Store.sales = DAOFactory.getExemplarOfSalesClass();
+        clients = Store.clients;
+        devices = Store.devices;
+        sales = Store.sales;
 
         try {
             clients.addClient("Anton", "Antonov", "Antonovich",
@@ -57,31 +49,12 @@ public class Store {
                     new BigDecimal(100499), new Date(System.currentTimeMillis()));
 
             HashMap<Device, Integer> devices = new HashMap<>();
-            devices.put(findDevice(1), 2);
-            devices.put(findDevice(2), 4);
-            devices.put(findDevice(3), 7); // 13 devices summary
-            sales.addSale(findClient(1), new Date(System.currentTimeMillis()), devices);
+            devices.put(Store.findDevice(1), 2);
+            devices.put(Store.findDevice(2), 4);
+            devices.put(Store.findDevice(3), 7); // 13 devices summary
+            sales.addSale(Store.findClient(1), new Date(System.currentTimeMillis()), devices);
         } catch (Exception ignored) {
         }
-
-    }
-
-    public static Client findClient(int clientID) {
-        for (Client client : Store.clients.getListOfClients()) {
-            if (client.getClientID() == clientID) {
-                return client;
-            }
-        }
-        return null;
-    }
-
-    public static Device findDevice(int deviceID) {
-        for (Device device : Store.devices.getListOfDevices()) {
-            if (device.getDeviceID() == deviceID) {
-                return device;
-            }
-        }
-        return null;
     }
 
 }

@@ -1,10 +1,10 @@
-package console;
+package view;
 
 import model.entities.Client;
 import model.entities.Device;
 import model.entities.Sale;
 import model.entities.enums.DeviceType;
-import main.Store;
+import controller.main.Store;
 
 import java.awt.Color;
 import java.lang.reflect.Field;
@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Implementation of console interaction.
+ * Implementation of view interaction.
  */
 public class ConsoleImpl {
     private boolean running;

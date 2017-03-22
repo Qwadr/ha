@@ -16,6 +16,17 @@ import java.util.Map;
 public class SalesImpl implements Sales {
     private static ArrayList<Sale> sales;
 
+    @Override
+    public Sale findSale(int ID) {
+        Sale existingSale = null;
+        for (Sale sale : sales) {
+            if (sale.getSaleID() == ID) {
+                existingSale = sale;
+            }
+        }
+        return existingSale;
+    }
+
     public void addSale(Client client, Date saleDate, Map<Device, Integer> devices) {
         sales.add(new Sale(client, saleDate, devices));
     }

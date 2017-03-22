@@ -19,10 +19,11 @@ import java.util.Scanner;
 /**
  * Implementation of view interaction.
  */
-public class ConsoleImpl {
+public class ConsoleImpl implements View{
     private boolean running;
     private static Scanner scanner;
 
+    @Override
     public void start() {
         scanner = new Scanner(System.in);
         running = true;

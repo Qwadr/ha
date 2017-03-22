@@ -8,12 +8,12 @@ import java.util.List;
  * Clients controller without realisation.
  */
 public class ClientsHelper {
-    public static List<Client> getSortedListOfClients(int ClientID){
+    public static List<Client> getSortedListOfClients(int ClientID) {
 
         return null;
     }
 
-    public static Client findClient(int ClientID){
+    public static Client findClient(int ClientID) {
 
         return null;
     }

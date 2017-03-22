@@ -15,6 +15,8 @@ public interface Devices {
 
     void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate);
 
+    Device findDevice(int ID);
+
     List<Device> getListOfDevices();
 }
 

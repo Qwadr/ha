@@ -24,7 +24,13 @@ public class ClientsImpl implements Clients {
 
     @Override
     public Client findClient(int ID) {
-        return null;
+        Client existingClient = null;
+        for (Client client : clients) {
+            if (client.getClientID() == ID) {
+                existingClient = client;
+            }
+        }
+        return existingClient;
     }
 
     public List<Client> getListOfClients() {

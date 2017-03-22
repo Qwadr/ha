@@ -1,4 +1,4 @@
-package model.entities.enums;
+package com.softwerke.khazipov.store.model.entities.enums;
 
 /**
  * All variations of device types.

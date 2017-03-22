@@ -1,7 +1,7 @@
-package model.impl;
+package com.softwerke.khazipov.store.model.impl;
 
-import model.Clients;
-import model.entities.Client;
+import com.softwerke.khazipov.store.model.Clients;
+import com.softwerke.khazipov.store.model.entities.Client;
 
 import java.sql.Date;
 import java.util.ArrayList;

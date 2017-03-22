@@ -1,11 +1,11 @@
-package controller.main;
+package com.softwerke.khazipov.store.controller.main;
 
-import view.ConsoleImpl;
-import model.Clients;
-import model.Devices;
-import model.Sales;
-import model.entities.Client;
-import model.entities.Device;
+import com.softwerke.khazipov.store.view.ConsoleImpl;
+import com.softwerke.khazipov.store.model.Clients;
+import com.softwerke.khazipov.store.model.Devices;
+import com.softwerke.khazipov.store.model.Sales;
+import com.softwerke.khazipov.store.model.entities.Client;
+import com.softwerke.khazipov.store.model.entities.Device;
 
 import java.text.ParseException;
 

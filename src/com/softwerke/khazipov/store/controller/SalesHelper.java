@@ -1,11 +1,11 @@
-package controller;
+package com.softwerke.khazipov.store.controller;
 
-import model.entities.Sale;
+import com.softwerke.khazipov.store.model.entities.Sale;
 
 import java.util.List;
 
 /**
- * Sales controller without realisation.
+ * Sales com.softwerke.khazipov.store.controller without realisation.
  */
 public class SalesHelper {
     public static List<Sale> getSortedListOfSales(int SaleID) {

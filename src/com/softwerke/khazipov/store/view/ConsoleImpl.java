@@ -1,10 +1,10 @@
-package view;
+package com.softwerke.khazipov.store.view;
 
-import model.entities.Client;
-import model.entities.Device;
-import model.entities.Sale;
-import model.entities.enums.DeviceType;
-import controller.main.Store;
+import com.softwerke.khazipov.store.model.entities.Client;
+import com.softwerke.khazipov.store.model.entities.Device;
+import com.softwerke.khazipov.store.model.entities.Sale;
+import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
+import com.softwerke.khazipov.store.controller.main.Store;
 
 import java.awt.Color;
 import java.lang.reflect.Field;
@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Implementation of view interaction.
+ * Implementation of com.softwerke.khazipov.store.view interaction.
  */
 public class ConsoleImpl implements View{
     private boolean running;

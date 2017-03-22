@@ -1,11 +1,11 @@
-package controller;
+package com.softwerke.khazipov.store.controller;
 
-import model.entities.Device;
+import com.softwerke.khazipov.store.model.entities.Device;
 
 import java.util.List;
 
 /**
- * Devices controller without realisation.
+ * Devices com.softwerke.khazipov.store.controller without realisation.
  */
 public class DevicesHelper {
     public static List<Device> getSortedListOfDevices(int DeviceID) {

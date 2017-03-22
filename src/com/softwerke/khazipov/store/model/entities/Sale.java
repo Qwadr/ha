@@ -1,4 +1,4 @@
-package model.entities;
+package com.softwerke.khazipov.store.model.entities;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;

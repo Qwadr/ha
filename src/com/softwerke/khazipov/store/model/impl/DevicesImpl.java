@@ -1,8 +1,8 @@
-package model.impl;
+package com.softwerke.khazipov.store.model.impl;
 
-import model.Devices;
-import model.entities.Device;
-import model.entities.enums.DeviceType;
+import com.softwerke.khazipov.store.model.Devices;
+import com.softwerke.khazipov.store.model.entities.Device;
+import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
 
 import java.awt.Color;
 import java.math.BigDecimal;

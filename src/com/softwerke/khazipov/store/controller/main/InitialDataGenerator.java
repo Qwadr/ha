@@ -1,11 +1,11 @@
-package controller.main;
+package com.softwerke.khazipov.store.controller.main;
 
-import model.Clients;
-import model.Devices;
-import model.Sales;
-import model.entities.Device;
-import model.entities.enums.DeviceType;
-import model.factories.DAOFactory;
+import com.softwerke.khazipov.store.model.Clients;
+import com.softwerke.khazipov.store.model.Devices;
+import com.softwerke.khazipov.store.model.Sales;
+import com.softwerke.khazipov.store.model.entities.Device;
+import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
+import com.softwerke.khazipov.store.model.factories.DAOFactory;
 
 import java.awt.Color;
 import java.math.BigDecimal;

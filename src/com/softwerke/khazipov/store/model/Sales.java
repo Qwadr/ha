@@ -17,5 +17,7 @@ public interface Sales {
 
     Sale findSale (int ID);
 
+    List<Sale> getSortedListOfSales();
+
     List<Sale> getListOfSales();
 }

@@ -1,5 +1,6 @@
 package com.softwerke.khazipov.store.model;
 
+import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
 
@@ -16,6 +17,8 @@ public interface Devices {
     void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate);
 
     Device findDevice(int ID);
+
+    List<Device> getSortedListOfDevices();
 
     List<Device> getListOfDevices();
 }

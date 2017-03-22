@@ -17,6 +17,12 @@ public class SalesImpl implements Sales {
     private static ArrayList<Sale> sales;
 
     @Override
+    public List<Sale> getSortedListOfSales() {
+        //TODO sorting
+        return null;
+    }
+
+    @Override
     public Sale findSale(int ID) {
         Sale existingSale = null;
         for (Sale sale : sales) {

@@ -33,6 +33,12 @@ public class ClientsImpl implements Clients {
         return existingClient;
     }
 
+    @Override
+    public List<Client> getSortedListOfClients() {
+        //TODO sorting
+        return null;
+    }
+
     public List<Client> getListOfClients() {
         return clients;
     }

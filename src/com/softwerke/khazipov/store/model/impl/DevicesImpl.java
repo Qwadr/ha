@@ -27,6 +27,12 @@ public class DevicesImpl implements Devices {
     }
 
     @Override
+    public List<Device> getSortedListOfDevices() {
+        //TODO sorting
+        return null;
+    }
+
+    @Override
     public Device findDevice(int ID) {
         Device existingDevices = null;
         for (Device device : devices) {

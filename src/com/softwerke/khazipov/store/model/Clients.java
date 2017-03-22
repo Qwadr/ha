@@ -14,6 +14,8 @@ public interface Clients {
 
     Client findClient(int ID);
 
+    List<Client> getSortedListOfClients();
+
     List<Client> getListOfClients();
 
 }

@@ -1,9 +1,8 @@
 package com.softwerke.khazipov.store.view;
 
-import com.softwerke.khazipov.store.controller.main.Store;
-import com.softwerke.khazipov.store.model.entities.Client;
-import com.softwerke.khazipov.store.model.entities.Device;
-import com.softwerke.khazipov.store.model.entities.Sale;
+import com.softwerke.khazipov.store.view.clients.ConsoleClients;
+import com.softwerke.khazipov.store.view.devices.ConsoleDevices;
+import com.softwerke.khazipov.store.view.sales.ConsoleSales;
 
 import java.util.Scanner;
 
@@ -14,12 +13,12 @@ public class ConsoleMain implements View {
     private boolean running;
     private static Scanner scanner;
 
-    @Override
     public void start() {
         scanner = new Scanner(System.in);
         running = true;
         System.out.println("Hello! Glad to see you in our imaginary store!");
         while (running) {
+            System.out.println("--------------------------");
             System.out.println("List of opportunities:");
             System.out.println("1. Working with clients.");
             System.out.println("2. Working with devices.");
@@ -49,27 +48,17 @@ public class ConsoleMain implements View {
                 default:
                     System.out.println("Wrong number! Try again.");
             }
-            System.out.println("--------------------------");
+
         }
     }
 
     private void printAllInfo() {
         System.out.println("All info:");
 
-        System.out.println("We have " + Store.clients.getListOfClients().size() + " clients: ");
-        for (Client client : Store.clients.getListOfClients()) {
-            System.out.println(client.toString());
-        }
+        ConsoleClients.printAllClientsInfo();
 
-        System.out.println("We have " + Store.devices.getListOfDevices().size() + " devices: ");
-        for (Device device : Store.devices.getListOfDevices()) {
-            System.out.println(device.toString());
-        }
+        ConsoleDevices.printAllDevicesInfo();
 
-        System.out.println("We have " + Store.sales.getListOfSales().size() + " sales: ");
-        for (Sale sale : Store.sales.getListOfSales()) {
-            System.out.println(sale.toString());
-        }
-
+        ConsoleSales.printAllSalesInfo();
     }
 }

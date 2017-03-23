@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Sales com.softwerke.khazipov.store.controller without realisation.
  */
-public class SalesHelper {
+public class SalesController {
     public static List<Sale> getSortedListOfSales(int SaleID) {
 
         return null;

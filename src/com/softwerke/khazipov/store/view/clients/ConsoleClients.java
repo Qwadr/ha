@@ -1,8 +1,9 @@
-package com.softwerke.khazipov.store.view;
+package com.softwerke.khazipov.store.view.clients;
 
 import com.softwerke.khazipov.store.controller.ClientsController;
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Client;
+import com.softwerke.khazipov.store.view.View;
 
 import java.sql.Date;
 import java.text.ParseException;
@@ -10,17 +11,18 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /**
- * Created by Qwadr on 22.03.2017 at 21:01.
+ * All vzaimodeistvie about clients. TODO vzaimodeistvie translation
  */
-public class ConsoleClients {
+public class ConsoleClients implements View {
     private static Scanner scanner;
     private static boolean running = false;
 
 
-    static void start(Scanner reader) {
+    public static void start(Scanner reader) {
         scanner = reader;
         running = true;
         while (running) {
+            System.out.println("--------------------------");
             System.out.println("List of opportunities:");
             System.out.println("1. Create new client.");
             System.out.println("2. Show all clients.");
@@ -38,10 +40,10 @@ public class ConsoleClients {
                     printAllClientsInfo();
                     break;
                 case 3:
-                    //TODO sorting();
+                    ConsoleClientsSorting.start(scanner);
                     break;
                 case 4:
-                    findClientAndPrintInfoAboutHim();
+                    findClientAndPrintInfoAboutIt();
                     break;
                 case 0:
                     running = false;
@@ -53,41 +55,7 @@ public class ConsoleClients {
 
     }
 
-    private static void findClientAndPrintInfoAboutHim() {
-        Client client;
-        System.out.println("Choose operation: ");
-        System.out.println("1. Find by ID.");
-        System.out.println("2. Find by full name.");
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("Enter ID: ");
-                int clientID = scanner.nextInt();
-                client = ClientsController.findClientByID(clientID);
-                if (client != null) {
-                    System.out.println("Client found. Info about him: ");
-                    System.out.println(client.toString());
-                }else{
-                    System.out.println("No such client.");
-                }
-                break;
-            case 2:
-                System.out.println("Enter full name: ");
-                String fullName = scanner.nextLine();
-                client = ClientsController.findClientByFullName(fullName);
-                if (client != null) {
-                    System.out.println("Client found. Info about him: ");
-                    System.out.println(client.toString());
-                }else{
-                    System.out.println("No such client.");
-                }
-                break;
-            default:
-                System.out.println("Bad number.");
-        }
-    }
-
-    private static void printAllClientsInfo() {
+    public static void printAllClientsInfo() {
         System.out.println("We have " + Store.clients.getListOfClients().size() + " clients: ");
         for (Client client : Store.clients.getListOfClients()) {
             System.out.println(client.toString());
@@ -120,6 +88,40 @@ public class ConsoleClients {
 
         Store.clients.addClient(firstName, secondName, thirdName, birthDate);
         System.out.println("Success! Client added.");
+    }
+
+    private static void findClientAndPrintInfoAboutIt() {
+        Client client;
+        System.out.println("Choose operation: ");
+        System.out.println("1. Find by ID.");
+        System.out.println("2. Find by full name.");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("Enter ID: ");
+                int clientID = scanner.nextInt();
+                client = ClientsController.findClientByID(clientID);
+                if (client != null) {
+                    System.out.println("Client found. Info about him: ");
+                    System.out.println(client.toString());
+                } else {
+                    System.out.println("No such client.");
+                }
+                break;
+            case 2:
+                System.out.println("Enter full name: ");
+                String fullName = scanner.nextLine();
+                client = ClientsController.findClientByFullName(fullName);
+                if (client != null) {
+                    System.out.println("Client found. Info about him: ");
+                    System.out.println(client.toString());
+                } else {
+                    System.out.println("No such client.");
+                }
+                break;
+            default:
+                System.out.println("Bad number.");
+        }
     }
 
 }

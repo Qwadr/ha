@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Devices com.softwerke.khazipov.store.controller without realisation.
  */
-public class DevicesHelper {
+public class DevicesController {
     public static List<Device> getSortedListOfDevices(int DeviceID) {
 
         return null;

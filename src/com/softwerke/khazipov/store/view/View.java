@@ -1,8 +1,7 @@
 package com.softwerke.khazipov.store.view;
 
 /**
- * Interface of com.softwerke.khazipov.store.view layer.
+ * Marker interface. Markered classes do only view logic.
  */
 public interface View {
-    void start();
 }

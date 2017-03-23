@@ -1,10 +1,11 @@
-package com.softwerke.khazipov.store.view;
+package com.softwerke.khazipov.store.view.devices;
 
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
+import com.softwerke.khazipov.store.view.View;
 
-import java.awt.*;
+import java.awt.Color;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -13,16 +14,17 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /**
- * Created by Qwadr on 22.03.2017 at 21:02.
+ * All vzaimodeistvie about devices. TODO vzaimodeistvie translation
  */
-public class ConsoleDevices {
+public class ConsoleDevices implements View {
     private static Scanner scanner;
     private static boolean running = false;
 
-    static void start(Scanner reader) {
+    public static void start(Scanner reader) {
         scanner = reader;
         running = true;
         while (running) {
+            System.out.println("--------------------------");
             System.out.println("List of opportunities:");
             System.out.println("1. Create new device.");
             System.out.println("2. Show all devices.");
@@ -40,10 +42,10 @@ public class ConsoleDevices {
                     printAllDevicesInfo();
                     break;
                 case 3:
-                    //TODO sorting();
+                    ConsoleDeviceSorting.start(scanner);
                     break;
                 case 4:
-                    findDeviceAndPrintInfoAboutHim();
+                    findDeviceAndPrintInfoAboutIt();
                     break;
                 case 0:
                     running = false;
@@ -55,11 +57,7 @@ public class ConsoleDevices {
 
     }
 
-    private static void findDeviceAndPrintInfoAboutHim() {
-        //TODO: write some code here
-    }
-
-    private static void printAllDevicesInfo() {
+    public static void printAllDevicesInfo() {
         System.out.println("We have " + Store.devices.getListOfDevices().size() + " devices: ");
         for (Device device : Store.devices.getListOfDevices()) {
             System.out.println(device.toString());
@@ -125,5 +123,9 @@ public class ConsoleDevices {
 
         Store.devices.addDevice(deviceType, brand, model, color, price, releaseDate);
         System.out.println("Success! Device added.");
+    }
+
+    private static void findDeviceAndPrintInfoAboutIt() {
+        //TODO: write some code here
     }
 }

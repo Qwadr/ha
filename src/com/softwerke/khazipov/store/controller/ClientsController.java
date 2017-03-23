@@ -7,13 +7,18 @@ import java.util.List;
 /**
  * Clients com.softwerke.khazipov.store.controller without realisation.
  */
-public class ClientsHelper {
+public class ClientsController {
     public static List<Client> getSortedListOfClients(int ClientID) {
+        
+        return null;
+    }
+
+    public static Client findClientByID(int ClientID) {
 
         return null;
     }
 
-    public static Client findClient(int ClientID) {
+    public static Client findClientByFullName(String clientFullName) {
 
         return null;
     }

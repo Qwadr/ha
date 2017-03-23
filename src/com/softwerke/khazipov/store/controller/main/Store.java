@@ -1,25 +1,25 @@
 package com.softwerke.khazipov.store.controller.main;
 
-import com.softwerke.khazipov.store.view.ConsoleImpl;
+import com.softwerke.khazipov.store.view.ConsoleMain;
 import com.softwerke.khazipov.store.model.Clients;
 import com.softwerke.khazipov.store.model.Devices;
 import com.softwerke.khazipov.store.model.Sales;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.model.entities.Device;
+import com.softwerke.khazipov.store.view.View;
 
 import java.text.ParseException;
 
 /**
- * Main class of the application.
+ * Entry point of the application.
  */
 public class Store {
-    static boolean running = true;
     public static Clients clients;
     public static Devices devices;
     public static Sales sales;
 
     public static void main(String[] args) throws ParseException {
-        ConsoleImpl console = new ConsoleImpl();
+        ConsoleMain console = new ConsoleMain();
 
         InitialDataGenerator.addInitialData();
 

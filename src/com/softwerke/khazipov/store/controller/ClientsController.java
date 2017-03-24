@@ -3,7 +3,6 @@ package com.softwerke.khazipov.store.controller;
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Client;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,10 +12,6 @@ import java.util.List;
  * Clients controller with realisation of search methods.
  */
 public class ClientsController {
-    public static List<Client> getSortedListOfClients(int ClientID) {
-        //TODO sorting
-        return null;
-    }
 
     public static Client findClientByID(int ClientID) {
         Client wantedClient = null;

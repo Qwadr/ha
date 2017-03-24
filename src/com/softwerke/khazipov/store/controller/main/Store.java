@@ -25,23 +25,4 @@ public class Store {
 
         console.start();
     }
-
-    public static Client findClient(int clientID) {
-        for (Client client : Store.clients.getListOfClients()) {
-            if (client.getClientID() == clientID) {
-                return client;
-            }
-        }
-        return null;
-    }
-
-    public static Device findDevice(int deviceID) {
-        for (Device device : Store.devices.getListOfDevices()) {
-            if (device.getDeviceID() == deviceID) {
-                return device;
-            }
-        }
-        return null;
-    }
-
 }

@@ -1,5 +1,7 @@
 package com.softwerke.khazipov.store.controller.main;
 
+import com.softwerke.khazipov.store.controller.ClientsController;
+import com.softwerke.khazipov.store.controller.DevicesController;
 import com.softwerke.khazipov.store.model.Clients;
 import com.softwerke.khazipov.store.model.Devices;
 import com.softwerke.khazipov.store.model.Sales;
@@ -50,10 +52,13 @@ public class InitialDataGenerator {
                     new BigDecimal(100499), new Date(System.currentTimeMillis()));
 
             HashMap<Device, Integer> devices = new HashMap<>();
-            devices.put(Store.findDevice(1), 2);
-            devices.put(Store.findDevice(2), 4);
-            devices.put(Store.findDevice(3), 7); // 13 devices summary
-            sales.addSale(Store.findClient(1), new Date(System.currentTimeMillis()), devices);
+            devices.put(DevicesController.findDeviceByID(1), 2);
+            devices.put(DevicesController.findDeviceByID(2), 4);
+            devices.put(DevicesController.findDeviceByID(3), 7); // 13 devices summary
+
+            sales.addSale(ClientsController.findClientByID(1),
+                    new Date(System.currentTimeMillis()), devices);
+
         } catch (ParseException ignored) {
         }
     }

@@ -12,14 +12,14 @@ import com.softwerke.khazipov.store.model.impl.SalesImpl;
  */
 public class DAOFactory {
     public static Clients getExemplarOfClientsClass() {
-        return new ClientsImpl();
+        return ClientsImpl.getInstance();
     }
 
     public static Devices getExemplarOfDevicesClass() {
-        return new DevicesImpl();
+        return DevicesImpl.getInstance();
     }
 
     public static Sales getExemplarOfSalesClass() {
-        return new SalesImpl();
+        return SalesImpl.getInstance();
     }
 }

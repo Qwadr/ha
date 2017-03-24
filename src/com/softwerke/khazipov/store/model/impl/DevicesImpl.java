@@ -15,7 +15,19 @@ import java.util.List;
  */
 
 public class DevicesImpl implements Devices {
+    private static DevicesImpl instance;
     private static ArrayList<Device> devices;
+
+    private DevicesImpl() {
+        devices = new ArrayList<>();
+    }
+
+    public static DevicesImpl getInstance() {
+        if (instance == null) {
+            instance = new DevicesImpl();
+        }
+        return instance;
+    }
 
     public void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
         devices.add(new Device(type, brand, model, color, price, releaseDate));
@@ -43,7 +55,5 @@ public class DevicesImpl implements Devices {
         return existingDevices;
     }
 
-    public DevicesImpl() {
-        devices = new ArrayList<>();
-    }
+
 }

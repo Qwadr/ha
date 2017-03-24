@@ -11,10 +11,19 @@ import java.util.List;
  * Implementation of "Clients" DAO interface. More information will be added later.
  */
 public class ClientsImpl implements Clients {
+    private static ClientsImpl instance;
     private static ArrayList<Client> clients;
 
-    public ClientsImpl() {
+
+    private ClientsImpl() {
         clients = new ArrayList<>();
+    }
+
+    public static ClientsImpl getInstance() {
+        if (instance == null) {
+            instance = new ClientsImpl();
+        }
+        return instance;
     }
 
     @Override

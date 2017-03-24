@@ -14,8 +14,19 @@ import java.util.Map;
  * Implementation of "Sales" DAO interface. More information will be added later.
  */
 public class SalesImpl implements Sales {
+    private static SalesImpl instance;
     private static ArrayList<Sale> sales;
 
+    public List<Sale> getListOfSales() {
+        return sales;
+    }
+
+    public static SalesImpl getInstance() {
+        if (instance == null) {
+            instance = new SalesImpl();
+        }
+        return instance;
+    }
     @Override
     public List<Sale> getSortedListOfSales() {
         //TODO sorting
@@ -41,7 +52,5 @@ public class SalesImpl implements Sales {
         sales = new ArrayList<>();
     }
 
-    public List<Sale> getListOfSales() {
-        return sales;
-    }
+
 }

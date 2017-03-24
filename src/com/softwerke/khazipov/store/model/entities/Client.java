@@ -27,13 +27,33 @@ public class Client {
         return clientID;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getFullName(){
+        return lastName + " " + firstName + " " + middleName;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Client ");
         sb.append("ID = ").append(clientID);
         sb.append("; full name: \"")
-                .append(firstName).append(" ")
                 .append(lastName).append(" ")
+                .append(firstName).append(" ")
                 .append(middleName).append("\"")
                 .append("; birthday date: ")
                 .append((new SimpleDateFormat("dd.MM.yyyy")).format(birthDate))

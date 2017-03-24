@@ -1,6 +1,8 @@
 package com.softwerke.khazipov.store.view.sales;
 
+import com.softwerke.khazipov.store.controller.SalesController;
 import com.softwerke.khazipov.store.controller.main.Store;
+import com.softwerke.khazipov.store.helpers.DateHelper;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.Sale;
@@ -10,6 +12,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -26,10 +29,10 @@ public class ConsoleSales implements View {
         while (running) {
             System.out.println("--------------------------");
             System.out.println("List of opportunities:");
-            System.out.println("1. Create new client.");
-            System.out.println("2. Show all clients.");
-            System.out.println("3. Sort clients.");
-            System.out.println("4. Find client.");
+            System.out.println("1. Create new sale.");
+            System.out.println("2. Show all sales.");
+            System.out.println("3. Sort sales.");
+            System.out.println("4. Find sale.");
             System.out.println("0. Back to main menu.");
 
             System.out.println("Choose operation: ");
@@ -78,18 +81,7 @@ public class ConsoleSales implements View {
             }
         }
 
-        Date saleDate = null;
-        correctValue = false;
-        while (!correctValue) {
-            try {
-                System.out.println("Release date (in \"dd-mm-yyyy\" format): ");
-                saleDate = new Date(
-                        (new SimpleDateFormat("dd-MM-yyyy")).parse(scanner.next()).getTime());
-                correctValue = true;
-            } catch (ParseException e) {
-                System.out.println("Wrong date. Try again.");
-            }
-        }
+        Date saleDate = DateHelper.readDate(scanner);
 
         System.out.println("Enter \"<DeviceID> <Count>\" pairs (enter '0' to finish): ");
         int deviceID = scanner.nextInt();
@@ -110,6 +102,38 @@ public class ConsoleSales implements View {
     }
 
     private static void findSaleAndPrintInfoAboutIt() {
-        //TODO: write some code here
+        Sale sale;
+        System.out.println("Choose operation: ");
+        System.out.println("1. Find sale by saleID.");
+        System.out.println("2. Find sale by date.");
+        System.out.println("0. Step back.");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("Enter ID: ");
+                int saleID = scanner.nextInt();
+                sale = SalesController.findSaleByID(saleID);
+                if (sale != null) {
+                    System.out.println("Sale found. Info about it: ");
+                    System.out.println(sale.toString());
+                } else {
+                    System.out.println("No such sale.");
+                }
+                break;
+            case 2:
+                Date date = DateHelper.readDate(scanner);
+                List<Sale> sales = SalesController.findSaleByDate(date); //Sale sale
+                if (sales.size() != 0) {
+                    System.out.println("We have something for you! Here all sales of this day:");
+                    System.out.println(sales.toString()); //TODO нам бы все вывести
+                } else {
+                    System.out.println("We have no sales with this brand."); //TODO lec mi spik from mai hart in inglish
+                }
+                break;
+            case 0:
+                break;
+            default:
+                System.out.println("Bad number.");
+        }
     }
 }

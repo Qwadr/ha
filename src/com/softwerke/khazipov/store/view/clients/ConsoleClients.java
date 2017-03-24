@@ -5,9 +5,13 @@ import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.view.View;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,12 +19,11 @@ import java.util.Scanner;
  */
 public class ConsoleClients implements View {
     private static Scanner scanner;
-    private static boolean running = false;
 
 
     public static void start(Scanner reader) {
         scanner = reader;
-        running = true;
+        boolean running = true;
         while (running) {
             System.out.println("--------------------------");
             System.out.println("List of opportunities:");
@@ -93,8 +96,10 @@ public class ConsoleClients implements View {
     private static void findClientAndPrintInfoAboutIt() {
         Client client;
         System.out.println("Choose operation: ");
-        System.out.println("1. Find by ID.");
-        System.out.println("2. Find by full name.");
+        System.out.println("1. Find client by ID.");
+        System.out.println("2. Find client by full name.");
+        System.out.println("0. Step back.");
+
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
@@ -109,15 +114,24 @@ public class ConsoleClients implements View {
                 }
                 break;
             case 2:
-                System.out.println("Enter full name: ");
-                String fullName = scanner.nextLine();
-                client = ClientsController.findClientByFullName(fullName);
-                if (client != null) {
-                    System.out.println("Client found. Info about him: ");
-                    System.out.println(client.toString());
-                } else {
-                    System.out.println("No such client.");
+                try {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.println("Enter full name: ");
+
+                    String fullName = reader.readLine();
+                    List<Client> clients = ClientsController.findClientByFullName(fullName);
+                    if (clients.size() != 0) {
+                        System.out.println("Success! Info: ");
+                        System.out.println(clients.toString()); //TODO нам бы всех вывести
+                    } else {
+                        System.out.println("No such client.");
+                    }
+                }catch (IOException e){
+                    System.out.println("Something went wrong, please, try again.");
                 }
+
+                break;
+            case 0:
                 break;
             default:
                 System.out.println("Bad number.");

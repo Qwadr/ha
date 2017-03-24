@@ -3,8 +3,12 @@ package com.softwerke.khazipov.store.controller;
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Device;
 
+import java.awt.*;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -69,5 +73,74 @@ public class DevicesController {
             }
         }
         return wantedDevices;
+    }
+
+    public static List<Device> getListOfDevicesSortedByDeviceID() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return Integer.compare(o1.getDeviceID(), o2.getDeviceID());
+            }
+        });
+        return allDevices;
+    }
+
+    public static List<Device> getListOfDevicesSortedByDeviceType() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return o1.getType().compareTo(o2.getType()); //TODO посмотри в тетрадь
+            }
+        });
+        return allDevices;
+    }
+
+    public static List<Device> getListOfDevicesSortedByBrand() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return o1.getBrand().toLowerCase().trim().compareTo(o2.getBrand().toLowerCase().trim());
+            }
+        });
+        return allDevices;
+    }
+
+    public static List<Device> getListOfDevicesSortedByModel() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                String s1 = o1.getBrand() + " " + o1.getModel();
+                String s2 = o2.getBrand() + " " + o2.getModel();
+                return s1.compareTo(s2);
+            }
+        });
+        return allDevices;
+    }
+
+
+    public static List<Device> getListOfDevicesSortedByReleaseDate() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return o1.getReleaseDate().compareTo(o2.getReleaseDate());
+            }
+        });
+        return allDevices;
+    }
+
+    public static List<Device> getListOfDevicesSortedByPrice() {
+        List<Device> allDevices = Store.devices.getListOfDevices();
+        Collections.sort(allDevices, new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return o1.getPrice().compareTo(o2.getPrice());
+            }
+        });
+        return allDevices;
     }
 }

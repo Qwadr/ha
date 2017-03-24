@@ -1,7 +1,10 @@
 package com.softwerke.khazipov.store.view.devices;
 
+import com.softwerke.khazipov.store.controller.DevicesController;
+import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.view.View;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,9 +21,8 @@ public class ConsoleDeviceSorting implements View {
         System.out.println("2. Device type.");
         System.out.println("3. Brand.");
         System.out.println("4. Model.");
-        System.out.println("5. Color.");
-        System.out.println("6. Release date.");
-        System.out.println("7. Price.");
+        System.out.println("5. Release date.");
+        System.out.println("6. Price.");
 
         System.out.println("Choose param: ");
         int choice = scanner.nextInt();
@@ -38,43 +40,59 @@ public class ConsoleDeviceSorting implements View {
                 printDevicesSortedByModel();
                 break;
             case 5:
-                printDevicesSortedByColor();
-                break;
-            case 6:
                 printDevicesSortedByReleaseDate();
                 break;
-            case 7:
+            case 6:
                 printDevicesSortedByPrice();
                 break;
-
         }
     }
 
     private static void printDevicesSortedByDeviceID() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceID();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 
     private static void printDevicesSortedByDeviceType() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 
     private static void printDevicesSortedByBrand() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 
     private static void printDevicesSortedByModel() {
-        //TODO: write some code here
-    }
-
-    private static void printDevicesSortedByColor() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 
     private static void printDevicesSortedByReleaseDate() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 
     private static void printDevicesSortedByPrice() {
-        //TODO: write some code here
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByPrice();
+        System.out.println("Devices, sorted by device ID:");
+        for (Device device : sortedDevices) {
+            System.out.println(device.toString());
+        }
     }
 }

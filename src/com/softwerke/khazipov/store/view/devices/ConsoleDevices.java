@@ -2,7 +2,7 @@ package com.softwerke.khazipov.store.view.devices;
 
 import com.softwerke.khazipov.store.controller.DevicesController;
 import com.softwerke.khazipov.store.controller.main.Store;
-import com.softwerke.khazipov.store.helpers.DateHelper;
+import com.softwerke.khazipov.store.view.helpers.DateHelper;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
 import com.softwerke.khazipov.store.view.View;

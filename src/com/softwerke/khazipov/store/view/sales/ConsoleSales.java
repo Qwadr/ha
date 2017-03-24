@@ -2,7 +2,7 @@ package com.softwerke.khazipov.store.view.sales;
 
 import com.softwerke.khazipov.store.controller.SalesController;
 import com.softwerke.khazipov.store.controller.main.Store;
-import com.softwerke.khazipov.store.helpers.DateHelper;
+import com.softwerke.khazipov.store.view.helpers.DateHelper;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.Sale;

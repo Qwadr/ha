@@ -1,7 +1,10 @@
 package com.softwerke.khazipov.store.view.clients;
 
+import com.softwerke.khazipov.store.controller.ClientsController;
+import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.view.View;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -45,22 +48,42 @@ public class ConsoleClientsSorting implements View {
     }
 
     private static void printClientsSortedByClientID() {
-        //TODO: write some code here
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByClientID();
+        System.out.println("Clients, sorted by client ID:");
+        for (Client client : sortedClients) {
+            System.out.println(client.toString());
+        }
     }
 
     private static void printClientsSortedByFirstName() {
-        //TODO: write some code here
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByFirstName();
+        System.out.println("Clients, sorted by first name:");
+        for (Client client : sortedClients) {
+            System.out.println(client.toString());
+        }
     }
 
     private static void printClientsSortedByLastName() {
-        //TODO: write some code here
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByLastName();
+        System.out.println("Clients, sorted by last name:");
+        for (Client client : sortedClients) {
+            System.out.println(client.toString());
+        }
     }
 
     private static void printClientsSortedByMiddleName() {
-        //TODO: write some code here
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByMiddleName();
+        System.out.println("Clients, sorted by middle name:");
+        for (Client client : sortedClients) {
+            System.out.println(client.toString());
+        }
     }
 
     private static void printClientsSortedByBirthdayDate() {
-        //TODO: write some code here
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByBirthdayDate();
+        System.out.println("Clients, sorted by birthday date:");
+        for (Client client : sortedClients) {
+            System.out.println(client.toString());
+        }
     }
 }

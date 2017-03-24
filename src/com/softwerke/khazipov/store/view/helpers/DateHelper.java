@@ -1,4 +1,4 @@
-package com.softwerke.khazipov.store.helpers;
+package com.softwerke.khazipov.store.view.helpers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

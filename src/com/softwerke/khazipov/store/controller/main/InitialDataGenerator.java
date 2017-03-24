@@ -31,13 +31,13 @@ public class InitialDataGenerator {
         sales = Store.sales;
 
         try {
-            clients.addClient("Anton", "Antonov", "Antonovich",
+            clients.addClient("Aydar", "Evteev", "Zakirovich",
                     new Date(System.currentTimeMillis()));
 
-            clients.addClient("Ivan", "Ivanov", "Ivanovich",
+            clients.addClient("Christina", "Dalevskaya", "Yanovna",
                     new Date((new SimpleDateFormat("dd-MM-yyyy")).parse("10-10-1900").getTime()));
 
-            clients.addClient("Petr", "Petrovich", "Petrovich",
+            clients.addClient("Boris", "Fadeev", "Xavierovich",
                     new Date((new SimpleDateFormat("dd-MM-yyyy")).parse("11-11-1800").getTime()));
 
             devices.addDevice(DeviceType.WALKMAN, "Sony", "Walkman UBER9000", Color.white,

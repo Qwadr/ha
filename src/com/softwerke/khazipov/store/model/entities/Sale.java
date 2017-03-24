@@ -49,4 +49,11 @@ public class Sale {
         return ans;
     }
 
+    public Date getSaleDate() {
+        return saleDate;
+    }
+
+    public Client getClient() {
+        return client;
+    }
 }

@@ -14,6 +14,31 @@ public class Device {
     private int deviceID;
     private Color color;
     private Date releaseDate;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public DeviceType getType() {
+        return type;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
     private DeviceType type;
     private String brand;
     private String model;

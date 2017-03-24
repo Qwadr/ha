@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ClientsController {
     public static List<Client> getSortedListOfClients(int ClientID) {
-
+        //TODO sorting
         return null;
     }
 

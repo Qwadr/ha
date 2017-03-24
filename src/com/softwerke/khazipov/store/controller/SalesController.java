@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Sales com.softwerke.khazipov.store.controller without realisation.
+ * Sales controller with realisation of search methods.
  */
 public class SalesController {
     public static List<Sale> getSortedListOfSales(int SaleID) {

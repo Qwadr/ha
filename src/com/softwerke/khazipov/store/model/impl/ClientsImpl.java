@@ -35,7 +35,7 @@ public class ClientsImpl implements Clients {
 
     @Override
     public List<Client> getSortedListOfClients() {
-        //TODO sorting
+        // TODO sorting
         return null;
     }
 

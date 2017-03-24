@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Devices com.softwerke.khazipov.store.controller without realisation.
+ * Devices controller with realisation of search methods.
  */
 public class DevicesController {
     public static List<Device> getSortedListOfDevices(int DeviceID) {

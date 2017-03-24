@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clients com.softwerke.khazipov.store.controller without realisation.
+ * Clients controller with realisation of search methods.
  */
 public class ClientsController {
     public static List<Client> getSortedListOfClients(int ClientID) {

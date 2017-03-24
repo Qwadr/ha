@@ -121,7 +121,7 @@ public class ConsoleClients implements View {
                     String fullName = reader.readLine();
                     List<Client> clients = ClientsController.findClientByFullName(fullName);
                     if (clients.size() != 0) {
-                        CollectionPrinter.printList(clients, "Success! Info: ");
+                        CollectionPrinter.printList("Success! Info: ", clients);
                     } else {
                         System.out.println("No such client.");
                     }

@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleDeviceSortingDialog implements View {
+class ConsoleDeviceSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {
@@ -51,31 +51,31 @@ public class ConsoleDeviceSortingDialog implements View {
 
     private static void printDevicesSortedByDeviceID() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceID();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 
     private static void printDevicesSortedByDeviceType() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 
     private static void printDevicesSortedByBrand() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 
     private static void printDevicesSortedByModel() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 
     private static void printDevicesSortedByReleaseDate() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 
     private static void printDevicesSortedByPrice() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByPrice();
-        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
+        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
     }
 }

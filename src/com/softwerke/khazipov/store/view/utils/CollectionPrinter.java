@@ -13,7 +13,7 @@ public class CollectionPrinter {
         }
     }
 
-    public static void printList(List source, String headString) {
+    public static void printList(String headString, List source) {
         System.out.println(headString);
         printList(source);
     }

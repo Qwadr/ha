@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleClientsSortingDialog implements View {
+class ConsoleClientsSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {
@@ -50,26 +50,26 @@ public class ConsoleClientsSortingDialog implements View {
 
     private static void printClientsSortedByClientID() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByClientID();
-        CollectionPrinter.printList(sortedClients, "Clients, sorted by client ID:");
+        CollectionPrinter.printList("Clients, sorted by client ID:", sortedClients);
     }
 
     private static void printClientsSortedByFirstName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByFirstName();
-        CollectionPrinter.printList(sortedClients, "Clients, sorted by first name:");
+        CollectionPrinter.printList("Clients, sorted by first name:", sortedClients);
     }
 
     private static void printClientsSortedByLastName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByLastName();
-        CollectionPrinter.printList(sortedClients, "Clients, sorted by last name:");
+        CollectionPrinter.printList("Clients, sorted by last name:", sortedClients);
     }
 
     private static void printClientsSortedByMiddleName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByMiddleName();
-        CollectionPrinter.printList(sortedClients, "Clients, sorted by middle name:");
+        CollectionPrinter.printList("Clients, sorted by middle name:", sortedClients);
     }
 
     private static void printClientsSortedByBirthdayDate() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByBirthdayDate();
-        CollectionPrinter.printList(sortedClients, "Clients, sorted by birthday date:");
+        CollectionPrinter.printList("Clients, sorted by birthday date:", sortedClients);
     }
 }

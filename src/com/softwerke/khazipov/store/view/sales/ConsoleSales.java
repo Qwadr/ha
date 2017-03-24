@@ -1,5 +1,7 @@
 package com.softwerke.khazipov.store.view.sales;
 
+import com.softwerke.khazipov.store.controller.ClientsController;
+import com.softwerke.khazipov.store.controller.DevicesController;
 import com.softwerke.khazipov.store.controller.SalesController;
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
@@ -72,7 +74,7 @@ public class ConsoleSales implements View {
         while (!correctValue) {
             System.out.println("Client ID: ");
             int clientID = scanner.nextInt();
-            client = Store.findClient(clientID);
+            client = ClientsController.findClientByID(clientID);
             if (client != null) {
                 correctValue = true;
             } else {
@@ -88,7 +90,7 @@ public class ConsoleSales implements View {
         Map<Device, Integer> devices = new HashMap<>();
         while (deviceID != 0) {
             count = scanner.nextInt();
-            Device currentDevice = Store.findDevice(deviceID);
+            Device currentDevice = DevicesController.findDeviceByID(deviceID);
             int currentCount = devices.getOrDefault(deviceID, 0);
             devices.put(currentDevice, currentCount + count);
 

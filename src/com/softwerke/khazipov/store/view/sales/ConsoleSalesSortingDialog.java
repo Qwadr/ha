@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleSalesSortingDialog implements View {
+class ConsoleSalesSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {
@@ -41,16 +41,16 @@ public class ConsoleSalesSortingDialog implements View {
 
     private static void printSalesSortedBySaleID() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedBySaleID();
-        CollectionPrinter.printList(sortedSales, "Sales, sorted by sale ID:");
+        CollectionPrinter.printList("Sales, sorted by sale ID:", sortedSales);
     }
 
     private static void printSalesSortedByClientID() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedByClientID();
-        CollectionPrinter.printList(sortedSales, "Sales, sorted by client ID:");
+        CollectionPrinter.printList("Sales, sorted by client ID:", sortedSales);
     }
 
     private static void printSalesSortedByDate() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedByDate();
-        CollectionPrinter.printList(sortedSales, "Sales, sorted by date:");
+        CollectionPrinter.printList("Sales, sorted by date:", sortedSales);
     }
 }

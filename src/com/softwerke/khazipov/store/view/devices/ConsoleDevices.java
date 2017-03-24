@@ -45,7 +45,7 @@ public class ConsoleDevices implements View {
                     printAllDevicesInfo();
                     break;
                 case 3:
-                    ConsoleDeviceSorting.start(scanner);
+                    ConsoleDeviceSortingDialog.start(scanner);
                     break;
                 case 4:
                     findDeviceAndPrintInfoAboutIt();

@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleClientsSorting implements View {
+public class ConsoleClientsSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {

@@ -43,7 +43,7 @@ public class ConsoleClients implements View {
                     printAllClientsInfo();
                     break;
                 case 3:
-                    ConsoleClientsSorting.start(scanner);
+                    ConsoleClientsSortingDialog.start(scanner);
                     break;
                 case 4:
                     findClientAndPrintInfoAboutIt();

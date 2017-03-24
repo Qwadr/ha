@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleDeviceSorting implements View {
+public class ConsoleDeviceSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {
@@ -58,7 +58,7 @@ public class ConsoleDeviceSorting implements View {
 
     private static void printDevicesSortedByDeviceType() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
-        System.out.println("Devices, sorted by device ID:");
+        System.out.println("Devices, sorted by device type:");
         for (Device device : sortedDevices) {
             System.out.println(device.toString());
         }
@@ -66,7 +66,7 @@ public class ConsoleDeviceSorting implements View {
 
     private static void printDevicesSortedByBrand() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
-        System.out.println("Devices, sorted by device ID:");
+        System.out.println("Devices, sorted by brand:");
         for (Device device : sortedDevices) {
             System.out.println(device.toString());
         }
@@ -74,7 +74,7 @@ public class ConsoleDeviceSorting implements View {
 
     private static void printDevicesSortedByModel() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
-        System.out.println("Devices, sorted by device ID:");
+        System.out.println("Devices, sorted by model:");
         for (Device device : sortedDevices) {
             System.out.println(device.toString());
         }
@@ -82,7 +82,7 @@ public class ConsoleDeviceSorting implements View {
 
     private static void printDevicesSortedByReleaseDate() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
-        System.out.println("Devices, sorted by device ID:");
+        System.out.println("Devices, sorted by release date:");
         for (Device device : sortedDevices) {
             System.out.println(device.toString());
         }
@@ -90,7 +90,7 @@ public class ConsoleDeviceSorting implements View {
 
     private static void printDevicesSortedByPrice() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByPrice();
-        System.out.println("Devices, sorted by device ID:");
+        System.out.println("Devices, sorted by price:");
         for (Device device : sortedDevices) {
             System.out.println(device.toString());
         }

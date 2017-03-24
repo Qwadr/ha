@@ -43,7 +43,7 @@ public class ConsoleSales implements View {
                     printAllSalesInfo();
                     break;
                 case 3:
-                    ConsoleSalesSorting.start(scanner);
+                    ConsoleSalesSortingDialog.start(scanner);
                     break;
                 case 4:
                     findSaleAndPrintInfoAboutIt();

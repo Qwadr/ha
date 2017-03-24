@@ -1,14 +1,16 @@
 package com.softwerke.khazipov.store.view.sales;
 
 import com.softwerke.khazipov.store.controller.SalesController;
+import com.softwerke.khazipov.store.model.entities.Sale;
 import com.softwerke.khazipov.store.view.View;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * //TODO: write some javadoc here plz
  */
-public class ConsoleSalesSorting implements View {
+public class ConsoleSalesSortingDialog implements View {
     private static Scanner scanner;
 
     static void start(Scanner reader) {
@@ -37,14 +39,26 @@ public class ConsoleSalesSorting implements View {
     }
 
     private static void printSalesSortedBySaleID() {
-        //TODO: write some code here
+        List<Sale> sortedSales = SalesController.getListOfSalesSortedBySaleID();
+        System.out.println("Sales, sorted by sale ID:");
+        for (Sale sale : sortedSales) {
+            System.out.println(sale.toString());
+        }
     }
 
     private static void printSalesSortedByClientID() {
-        //TODO: write some code here
+        List<Sale> sortedSales = SalesController.getListOfSalesSortedByClientID();
+        System.out.println("Sales, sorted by client ID:");
+        for (Sale sale : sortedSales) {
+            System.out.println(sale.toString());
+        }
     }
 
     private static void printSalesSortedByDate() {
-        //TODO: write some code here
+        List<Sale> sortedSales = SalesController.getListOfSalesSortedByDate();
+        System.out.println("Sales, sorted by date:");
+        for (Sale sale : sortedSales) {
+            System.out.println(sale.toString());
+        }
     }
 }

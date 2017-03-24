@@ -5,6 +5,8 @@ import com.softwerke.khazipov.store.model.entities.Sale;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -52,5 +54,42 @@ public class SalesController {
             }
         }
         return wantedSales;
+    }
+
+    public static List<Sale> getListOfSalesSortedBySaleID() {
+        List<Sale> allSales = Store.sales.getListOfSales();
+        Collections.sort(allSales, new Comparator<Sale>() {
+            @Override
+            public int compare(Sale o1, Sale o2) {
+                return Integer.compare(o1.getSaleID(), o2.getSaleID());
+            }
+        });
+        return allSales;
+    }
+
+
+    public static List<Sale> getListOfSalesSortedByClientID() {
+        List<Sale> allSales = Store.sales.getListOfSales();
+        Collections.sort(allSales, new Comparator<Sale>() {
+            @Override
+            public int compare(Sale o1, Sale o2) {
+                return Integer.compare(
+                        o1.getClient().getClientID(),
+                        o2.getClient().getClientID()
+                );
+            }
+        });
+        return allSales;
+    }
+
+    public static List<Sale> getListOfSalesSortedByDate() {
+        List<Sale> allSales = Store.sales.getListOfSales();
+        Collections.sort(allSales, new Comparator<Sale>() {
+            @Override
+            public int compare(Sale o1, Sale o2) {
+                return o1.getSaleDate().compareTo(o2.getSaleDate());
+            }
+        });
+        return allSales;
     }
 }

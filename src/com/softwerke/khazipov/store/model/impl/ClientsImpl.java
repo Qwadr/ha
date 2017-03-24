@@ -14,7 +14,6 @@ public class ClientsImpl implements Clients {
     private static ClientsImpl instance;
     private static ArrayList<Client> clients;
 
-
     private ClientsImpl() {
         clients = new ArrayList<>();
     }
@@ -29,23 +28,6 @@ public class ClientsImpl implements Clients {
     @Override
     public void addClient(String firstName, String lastName, String middleName, Date birthDate) {
         clients.add(new Client(firstName, lastName, middleName, birthDate));
-    }
-
-    @Override
-    public Client findClient(int ID) {
-        Client existingClient = null;
-        for (Client client : clients) {
-            if (client.getClientID() == ID) {
-                existingClient = client;
-            }
-        }
-        return existingClient;
-    }
-
-    @Override
-    public List<Client> getSortedListOfClients() {
-        // TODO sorting
-        return null;
     }
 
     public List<Client> getListOfClients() {

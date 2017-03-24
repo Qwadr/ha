@@ -3,6 +3,7 @@ package com.softwerke.khazipov.store.view.clients;
 import com.softwerke.khazipov.store.controller.ClientsController;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.view.View;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -49,41 +50,26 @@ public class ConsoleClientsSortingDialog implements View {
 
     private static void printClientsSortedByClientID() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByClientID();
-        System.out.println("Clients, sorted by client ID:");
-        for (Client client : sortedClients) {
-            System.out.println(client.toString());
-        }
+        CollectionPrinter.printList(sortedClients, "Clients, sorted by client ID:");
     }
 
     private static void printClientsSortedByFirstName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByFirstName();
-        System.out.println("Clients, sorted by first name:");
-        for (Client client : sortedClients) {
-            System.out.println(client.toString());
-        }
+        CollectionPrinter.printList(sortedClients, "Clients, sorted by first name:");
     }
 
     private static void printClientsSortedByLastName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByLastName();
-        System.out.println("Clients, sorted by last name:");
-        for (Client client : sortedClients) {
-            System.out.println(client.toString());
-        }
+        CollectionPrinter.printList(sortedClients, "Clients, sorted by last name:");
     }
 
     private static void printClientsSortedByMiddleName() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByMiddleName();
-        System.out.println("Clients, sorted by middle name:");
-        for (Client client : sortedClients) {
-            System.out.println(client.toString());
-        }
+        CollectionPrinter.printList(sortedClients, "Clients, sorted by middle name:");
     }
 
     private static void printClientsSortedByBirthdayDate() {
         List<Client> sortedClients = ClientsController.getListOfClientsSortedByBirthdayDate();
-        System.out.println("Clients, sorted by birthday date:");
-        for (Client client : sortedClients) {
-            System.out.println(client.toString());
-        }
+        CollectionPrinter.printList(sortedClients, "Clients, sorted by birthday date:");
     }
 }

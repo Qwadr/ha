@@ -3,6 +3,7 @@ package com.softwerke.khazipov.store.view.sales;
 import com.softwerke.khazipov.store.controller.SalesController;
 import com.softwerke.khazipov.store.model.entities.Sale;
 import com.softwerke.khazipov.store.view.View;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -40,25 +41,16 @@ public class ConsoleSalesSortingDialog implements View {
 
     private static void printSalesSortedBySaleID() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedBySaleID();
-        System.out.println("Sales, sorted by sale ID:");
-        for (Sale sale : sortedSales) {
-            System.out.println(sale.toString());
-        }
+        CollectionPrinter.printList(sortedSales, "Sales, sorted by sale ID:");
     }
 
     private static void printSalesSortedByClientID() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedByClientID();
-        System.out.println("Sales, sorted by client ID:");
-        for (Sale sale : sortedSales) {
-            System.out.println(sale.toString());
-        }
+        CollectionPrinter.printList(sortedSales, "Sales, sorted by client ID:");
     }
 
     private static void printSalesSortedByDate() {
         List<Sale> sortedSales = SalesController.getListOfSalesSortedByDate();
-        System.out.println("Sales, sorted by date:");
-        for (Sale sale : sortedSales) {
-            System.out.println(sale.toString());
-        }
+        CollectionPrinter.printList(sortedSales, "Sales, sorted by date:");
     }
 }

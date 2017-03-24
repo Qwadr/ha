@@ -2,13 +2,10 @@ package com.softwerke.khazipov.store.controller;
 
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Device;
+import com.softwerke.khazipov.store.view.utils.DateHelper;
 
-import java.awt.*;
-import java.math.BigDecimal;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -68,9 +65,10 @@ public class DevicesController {
         List<Device> allDevices = Store.devices.getListOfDevices();
 
         for (Device device : allDevices) {
-            if (device.getReleaseDate() == releaseDate) {
+            if (DateHelper.datesAreInOneDay(device.getReleaseDate(), releaseDate)) {
                 wantedDevices.add(device);
             }
+
         }
         return wantedDevices;
     }

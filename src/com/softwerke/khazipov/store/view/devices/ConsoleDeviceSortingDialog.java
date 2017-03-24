@@ -3,6 +3,7 @@ package com.softwerke.khazipov.store.view.devices;
 import com.softwerke.khazipov.store.controller.DevicesController;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.view.View;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -50,49 +51,31 @@ public class ConsoleDeviceSortingDialog implements View {
 
     private static void printDevicesSortedByDeviceID() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceID();
-        System.out.println("Devices, sorted by device ID:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 
     private static void printDevicesSortedByDeviceType() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
-        System.out.println("Devices, sorted by device type:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 
     private static void printDevicesSortedByBrand() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
-        System.out.println("Devices, sorted by brand:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 
     private static void printDevicesSortedByModel() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
-        System.out.println("Devices, sorted by model:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 
     private static void printDevicesSortedByReleaseDate() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
-        System.out.println("Devices, sorted by release date:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 
     private static void printDevicesSortedByPrice() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByPrice();
-        System.out.println("Devices, sorted by price:");
-        for (Device device : sortedDevices) {
-            System.out.println(device.toString());
-        }
+        CollectionPrinter.printList(sortedDevices, "Devices, sorted by price:");
     }
 }

@@ -12,10 +12,6 @@ public interface Clients {
 
     void addClient(String firstName, String lastName, String middleName, Date birthDate);
 
-    Client findClient(int ID);
-
-    List<Client> getSortedListOfClients();
-
     List<Client> getListOfClients();
 
 }

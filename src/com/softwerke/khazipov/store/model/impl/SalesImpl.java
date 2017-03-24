@@ -17,8 +17,8 @@ public class SalesImpl implements Sales {
     private static SalesImpl instance;
     private static ArrayList<Sale> sales;
 
-    public List<Sale> getListOfSales() {
-        return sales;
+    private SalesImpl() {
+        sales = new ArrayList<>();
     }
 
     public static SalesImpl getInstance() {
@@ -27,29 +27,13 @@ public class SalesImpl implements Sales {
         }
         return instance;
     }
-    @Override
-    public List<Sale> getSortedListOfSales() {
-        //TODO sorting
-        return null;
-    }
 
-    @Override
-    public Sale findSale(int ID) {
-        Sale existingSale = null;
-        for (Sale sale : sales) {
-            if (sale.getSaleID() == ID) {
-                existingSale = sale;
-            }
-        }
-        return existingSale;
+    public List<Sale> getListOfSales() {
+        return sales;
     }
 
     public void addSale(Client client, Date saleDate, Map<Device, Integer> devices) {
         sales.add(new Sale(client, saleDate, devices));
-    }
-
-    public SalesImpl() {
-        sales = new ArrayList<>();
     }
 
 

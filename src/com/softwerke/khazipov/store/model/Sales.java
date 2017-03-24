@@ -15,9 +15,5 @@ public interface Sales {
 
     void addSale(Client client, Date saleDate, Map<Device, Integer> devices);
 
-    Sale findSale (int ID);
-
-    List<Sale> getSortedListOfSales();
-
     List<Sale> getListOfSales();
 }

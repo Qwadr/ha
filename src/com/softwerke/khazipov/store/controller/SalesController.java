@@ -13,11 +13,6 @@ import java.util.List;
  * Sales controller with realisation of search methods.
  */
 public class SalesController {
-    public static List<Sale> getSortedListOfSales(int SaleID) {
-        //TODO: write some code here
-        return null;
-    }
-
     public static Sale findSaleBySaleID(int saleID) {
         Sale wantedSale = null;
         List<Sale> allSales = Store.sales.getListOfSales();

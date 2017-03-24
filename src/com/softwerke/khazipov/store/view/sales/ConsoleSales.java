@@ -2,7 +2,8 @@ package com.softwerke.khazipov.store.view.sales;
 
 import com.softwerke.khazipov.store.controller.SalesController;
 import com.softwerke.khazipov.store.controller.main.Store;
-import com.softwerke.khazipov.store.view.helpers.DateHelper;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
+import com.softwerke.khazipov.store.view.utils.DateHelper;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.Sale;
@@ -118,29 +119,33 @@ public class ConsoleSales implements View {
                     System.out.println("No such sale.");
                 }
                 break;
+
             case 2:
                 System.out.println("Enter client ID: ");
                 int clientID = scanner.nextInt();
                 List<Sale> salesToThisClient = SalesController.findSaleByClientID(clientID);
                 if (salesToThisClient != null) {
                     System.out.println("We have something for you! Here all sales of this client: ");
-                    System.out.println(salesToThisClient.toString());
+                    CollectionPrinter.printList(salesToThisClient);
                 } else {
                     System.out.println("No such sale.");
                 }
                 break;
+
             case 3:
                 Date date = DateHelper.readDate(scanner);
                 List<Sale> salesInThisDay = SalesController.findSaleByDate(date); //Sale sale
                 if (salesInThisDay.size() != 0) {
                     System.out.println("We have something for you! Here all sales of this day:");
-                    System.out.println(salesInThisDay.toString()); //TODO нам бы все вывести
+                    CollectionPrinter.printList(salesInThisDay);
                 } else {
                     System.out.println("We have no sales with this brand."); //TODO lec mi spik from mai hart in inglish
                 }
                 break;
+
             case 0:
                 break;
+
             default:
                 System.out.println("Bad number.");
         }

@@ -4,6 +4,7 @@ import com.softwerke.khazipov.store.controller.ClientsController;
 import com.softwerke.khazipov.store.controller.main.Store;
 import com.softwerke.khazipov.store.model.entities.Client;
 import com.softwerke.khazipov.store.view.View;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,10 +60,8 @@ public class ConsoleClients implements View {
     }
 
     public static void printAllClientsInfo() {
-        System.out.println("We have " + Store.clients.getListOfClients().size() + " clients: ");
-        for (Client client : Store.clients.getListOfClients()) {
-            System.out.println(client.toString());
-        }
+        System.out.println("We have " + Store.clients.getListOfClients().size() + " clients:");
+        CollectionPrinter.printList(Store.clients.getListOfClients());
     }
 
     private static void readDataAndCreateNewClient() {
@@ -113,6 +112,7 @@ public class ConsoleClients implements View {
                     System.out.println("No such client.");
                 }
                 break;
+
             case 2:
                 try {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -121,18 +121,18 @@ public class ConsoleClients implements View {
                     String fullName = reader.readLine();
                     List<Client> clients = ClientsController.findClientByFullName(fullName);
                     if (clients.size() != 0) {
-                        System.out.println("Success! Info: ");
-                        System.out.println(clients.toString()); //TODO нам бы всех вывести
+                        CollectionPrinter.printList(clients, "Success! Info: ");
                     } else {
                         System.out.println("No such client.");
                     }
-                }catch (IOException e){
+                } catch (IOException e) {
                     System.out.println("Something went wrong, please, try again.");
                 }
-
                 break;
+
             case 0:
                 break;
+
             default:
                 System.out.println("Bad number.");
         }

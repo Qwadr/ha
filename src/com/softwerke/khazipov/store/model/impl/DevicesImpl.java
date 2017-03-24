@@ -38,22 +38,4 @@ public class DevicesImpl implements Devices {
         return devices;
     }
 
-    @Override
-    public List<Device> getSortedListOfDevices() {
-        //TODO sorting
-        return null;
-    }
-
-    @Override
-    public Device findDevice(int ID) {
-        Device existingDevices = null;
-        for (Device device : devices) {
-            if (device.getDeviceID() == ID) {
-                existingDevices = device;
-            }
-        }
-        return existingDevices;
-    }
-
-
 }

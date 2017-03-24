@@ -2,7 +2,8 @@ package com.softwerke.khazipov.store.view.devices;
 
 import com.softwerke.khazipov.store.controller.DevicesController;
 import com.softwerke.khazipov.store.controller.main.Store;
-import com.softwerke.khazipov.store.view.helpers.DateHelper;
+import com.softwerke.khazipov.store.view.utils.CollectionPrinter;
+import com.softwerke.khazipov.store.view.utils.DateHelper;
 import com.softwerke.khazipov.store.model.entities.Device;
 import com.softwerke.khazipov.store.model.entities.enums.DeviceType;
 import com.softwerke.khazipov.store.view.View;
@@ -65,6 +66,7 @@ public class ConsoleDevices implements View {
         for (Device device : Store.devices.getListOfDevices()) {
             System.out.println(device.toString());
         }
+
     }
 
     private static void readDataAndCreateNewDevice() {
@@ -146,9 +148,10 @@ public class ConsoleDevices implements View {
                     System.out.println("Device found. Info about it: ");
                     System.out.println(device.toString());
                 } else {
-                    System.out.println("No such device.");
+                    System.out.println("We have no devices with this ID.");
                 }
                 break;
+
             case 2:
                 System.out.println("Enter brand name: ");
                 String brandName = scanner.next();
@@ -160,29 +163,33 @@ public class ConsoleDevices implements View {
                     System.out.println("We have no devices with this brand."); //TODO lec mi spik from mai hart in inglish
                 }
                 break;
+
             case 3:
                 System.out.println("Enter type: ");
                 String type = scanner.next();
                 List<Device> typeDevices = DevicesController.findDeviceByType(type); //list of devices
                 if (typeDevices.size() != 0) {
                     System.out.println("We have something for you! Here all " + type + "s:");
-                    System.out.println(typeDevices.toString()); //TODO нам бы всех вывести
+                    CollectionPrinter.printList(typeDevices);
                 } else {
                     System.out.println("We have no devices with this type."); //TODO lec mi spik from mai hart in inglish
                 }
                 break;
+
             case 4:
                 Date releaseDate = DateHelper.readDate(scanner);
-                List<Device> devices = DevicesController.findDeviceByReleaseDate(releaseDate);
-                if (devices.size() != 0) {
+                List<Device> devicesWithThisReleaseTime = DevicesController.findDeviceByReleaseDate(releaseDate);
+                if (devicesWithThisReleaseTime.size() != 0) {
                     System.out.println("We have something for you! Here all devices with this releasing date:");
-                    System.out.println(devices.toString()); //TODO нам бы все вывести
+                    CollectionPrinter.printList(devicesWithThisReleaseTime);
                 } else {
-                    System.out.println("We have no devices with this brand."); //TODO lec mi spik from mai hart in inglish
+                    System.out.println("We have no devices with this realisation date."); //TODO lec mi spik from mai hart in inglish
                 }
                 break;
+
             case 0:
                 break;
+
             default:
                 System.out.println("Bad number.");
         }

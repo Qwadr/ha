@@ -89,7 +89,7 @@ public class DevicesController {
         Collections.sort(allDevices, new Comparator<Device>() {
             @Override
             public int compare(Device o1, Device o2) {
-                return o1.getType().compareTo(o2.getType()); //TODO посмотри в тетрадь
+                return o1.getType().compareTo(o2.getType());
             }
         });
         return allDevices;

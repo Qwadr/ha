@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * All vzaimodeistvie about devices. TODO vzaimodeistvie translation
+ * All interaction with user about devices.
  */
 public class ConsoleDevices implements View {
     private static Scanner scanner;
@@ -160,7 +160,7 @@ public class ConsoleDevices implements View {
                     System.out.println("We have something for you! Here all " + brandName + " devices:");
                     System.out.println(brandDevices.toString());
                 } else {
-                    System.out.println("We have no devices with this brand."); //TODO lec mi spik from mai hart in inglish
+                    System.out.println("We don't have devices with this brand.");
                 }
                 break;
 
@@ -172,7 +172,7 @@ public class ConsoleDevices implements View {
                     System.out.println("We have something for you! Here all " + type + "s:");
                     CollectionPrinter.printList(typeDevices);
                 } else {
-                    System.out.println("We have no devices with this type."); //TODO lec mi spik from mai hart in inglish
+                    System.out.println("We don't have devices with this type.");
                 }
                 break;
 
@@ -183,7 +183,7 @@ public class ConsoleDevices implements View {
                     System.out.println("We have something for you! Here all devices with this releasing date:");
                     CollectionPrinter.printList(devicesWithThisReleaseTime);
                 } else {
-                    System.out.println("We have no devices with this realisation date."); //TODO lec mi spik from mai hart in inglish
+                    System.out.println("We don't have devices with this realisation date.");
                 }
                 break;
 

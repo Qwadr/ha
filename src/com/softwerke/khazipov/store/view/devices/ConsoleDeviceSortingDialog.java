@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * //TODO: write some javadoc here plz
+ * A part of the console interaction with user about
+ * the selection of the device sorting parameters.
  */
 class ConsoleDeviceSortingDialog implements View {
     private static Scanner scanner;

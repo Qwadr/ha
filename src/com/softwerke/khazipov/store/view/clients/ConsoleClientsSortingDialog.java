@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * //TODO: write some javadoc here plz
+ * A part of the console interaction with user about
+ * the selection of the client sorting parameters.
  */
 class ConsoleClientsSortingDialog implements View {
     private static Scanner scanner;

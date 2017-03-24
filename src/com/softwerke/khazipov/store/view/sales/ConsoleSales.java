@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * All vzaimodeistvie about sales. TODO vzaimodeistvie translation
+ * All interaction with user about sales.
  */
 public class ConsoleSales implements View {
     private static Scanner scanner;
@@ -141,7 +141,7 @@ public class ConsoleSales implements View {
                     System.out.println("We have something for you! Here all sales of this day:");
                     CollectionPrinter.printList(salesInThisDay);
                 } else {
-                    System.out.println("We have no sales with this brand."); //TODO lec mi spik from mai hart in inglish
+                    System.out.println("We didn't have sales that day.");
                 }
                 break;
 

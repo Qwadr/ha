@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * All vzaimodeistvie about clients. TODO vzaimodeistvie translation
+ * All interaction with user about clients.
  */
 public class ConsoleClients implements View {
     private static Scanner scanner;

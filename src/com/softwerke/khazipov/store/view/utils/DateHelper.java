@@ -11,7 +11,7 @@ import static java.util.Calendar.MONTH;
 import static java.util.Calendar.YEAR;
 
 /**
- * eeeeeeee TODO javadoc
+ * A utility that helps in working with dates.
  */
 public class DateHelper {
     public static Date readDate(Scanner scanner) {

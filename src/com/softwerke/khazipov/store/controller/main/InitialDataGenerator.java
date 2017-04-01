@@ -19,12 +19,12 @@ import java.util.HashMap;
 /**
  * Creating system state at start of our program.
  */
-public class InitialDataGenerator {
+class InitialDataGenerator {
     private static Clients clients;
     private static Devices devices;
     private static Sales sales;
 
-    public static void addInitialData() {
+    static void addInitialData() {
         Store.clients = DAOFactory.getExemplarOfClientsClass();
         Store.devices = DAOFactory.getExemplarOfDevicesClass();
         Store.sales = DAOFactory.getExemplarOfSalesClass();
@@ -59,7 +59,8 @@ public class InitialDataGenerator {
             sales.addSale(ClientsController.findClientByID(1),
                     new Date(System.currentTimeMillis()), devices);
 
-        } catch (ParseException ignored) {
+        } catch (ParseException allDataIsCorrect) {
+            //ignored
         }
     }
 

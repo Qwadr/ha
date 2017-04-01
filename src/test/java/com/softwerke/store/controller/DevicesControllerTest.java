@@ -43,14 +43,27 @@ public class DevicesControllerTest {
 
     @Test
     public void findExistingDevicesByBrand() throws Exception {
+        List<Device> devices = DevicesController.findDevicesByBrand("Lenovo");
+        List<Device> devices1 = DevicesController.findDevicesByBrand("LENOVO");
+
+        assertTrue(devices.size() > 0 && devices1.size() > 0);
+
+        assertArrayEquals(devices.toArray(new Device[devices.size()]),
+                devices1.toArray(new Device[devices1.size()]));
+    }
+
+    @Test
+    public void findNotExistingDevicesByBrand() throws Exception {
         List<Device> devices;
-        devices = DevicesController.findDevicesByBrand("Lenovo");
-        boolean resultIsCorrect = devices.size() > 0;
-        assertTrue(resultIsCorrect);
+        devices = DevicesController.findDevicesByBrand("Lenovovo");
+
+        assertTrue(devices.size() == 0);
     }
 
     @Test
     public void findDeviceByType() throws Exception {
+        List<Device> devices;
+        devices = DevicesController.findDevicesByType("Lenovovo");
     }
 
     @Test

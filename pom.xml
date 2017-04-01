@@ -25,7 +25,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.softwerke.khazipov.store.controller.main.Store</mainClass>
+                            <mainClass>com.softwerke.store.controller.main.Store</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

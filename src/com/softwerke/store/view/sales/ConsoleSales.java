@@ -127,7 +127,7 @@ public class ConsoleSales implements View {
             case 2:
                 System.out.println("Enter client ID: ");
                 int clientID = scanner.nextInt();
-                List<Sale> salesToThisClient = SalesController.findSaleByClientID(clientID);
+                List<Sale> salesToThisClient = SalesController.findSalesByClientID(clientID);
                 if (salesToThisClient != null) {
                     System.out.println("We have something for you! Here all sales of this client: ");
                     CollectionPrinter.printList(salesToThisClient);

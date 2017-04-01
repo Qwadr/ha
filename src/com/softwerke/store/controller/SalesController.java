@@ -26,7 +26,6 @@ public class SalesController {
         return wantedSale;
     }
 
-
     public static List<Sale> findSaleByDate(Date date) {
         List<Sale> wantedSales = new ArrayList<>();
         List<Sale> allSales = Store.sales.getListOfSales();
@@ -39,7 +38,7 @@ public class SalesController {
         return wantedSales;
     }
 
-    public static List<Sale> findSaleByClientID(int clientID) {
+    public static List<Sale> findSalesByClientID(int clientID) {
         List<Sale> wantedSales = new ArrayList<>();
         List<Sale> allSales = Store.sales.getListOfSales();
 
@@ -61,7 +60,6 @@ public class SalesController {
         });
         return allSales;
     }
-
 
     public static List<Sale> getListOfSalesSortedByClientID() {
         List<Sale> allSales = Store.sales.getListOfSales();

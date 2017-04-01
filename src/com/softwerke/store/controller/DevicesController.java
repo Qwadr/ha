@@ -12,11 +12,6 @@ import java.util.List;
  * Devices controller with realisation of search methods.
  */
 public class DevicesController {
-    public static List<Device> getSortedListOfDevices(int DeviceID) {
-
-        return null;
-    }
-
     public static Device findDeviceByID(int DeviceID) {
         Device wantedDevice = null;
         List<Device> allDevices = Store.devices.getListOfDevices();
@@ -30,7 +25,7 @@ public class DevicesController {
         return wantedDevice;
     }
 
-    public static List<Device> findDeviceByBrand(String brandName) {
+    public static List<Device> findDevicesByBrand(String brandName) {
         List<Device> wantedDevices = new ArrayList<>();
         List<Device> allDevices = Store.devices.getListOfDevices();
 
@@ -42,7 +37,7 @@ public class DevicesController {
         return wantedDevices;
     }
 
-    public static List<Device> findDeviceByType(String type) {
+    public static List<Device> findDevicesByType(String type) {
         List<Device> wantedDevices = new ArrayList<>();
         List<Device> allDevices = Store.devices.getListOfDevices();
 
@@ -60,7 +55,7 @@ public class DevicesController {
         return wantedDevices;
     }
 
-    public static List<Device> findDeviceByReleaseDate(Date releaseDate) {
+    public static List<Device> findDevicesByReleaseDate(Date releaseDate) {
         List<Device> wantedDevices = new ArrayList<>();
         List<Device> allDevices = Store.devices.getListOfDevices();
 
@@ -118,7 +113,6 @@ public class DevicesController {
         });
         return allDevices;
     }
-
 
     public static List<Device> getListOfDevicesSortedByReleaseDate() {
         List<Device> allDevices = Store.devices.getListOfDevices();

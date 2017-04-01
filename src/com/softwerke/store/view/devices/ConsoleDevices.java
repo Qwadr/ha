@@ -155,7 +155,7 @@ public class ConsoleDevices implements View {
             case 2:
                 System.out.println("Enter brand name: ");
                 String brandName = scanner.next();
-                List<Device> brandDevices = DevicesController.findDeviceByBrand(brandName);
+                List<Device> brandDevices = DevicesController.findDevicesByBrand(brandName);
                 if (brandDevices.size() == 0) {
                     System.out.println("We have something for you! Here all " + brandName + " devices:");
                     System.out.println(brandDevices.toString());
@@ -167,7 +167,7 @@ public class ConsoleDevices implements View {
             case 3:
                 System.out.println("Enter type: ");
                 String type = scanner.next();
-                List<Device> typeDevices = DevicesController.findDeviceByType(type); //list of devices
+                List<Device> typeDevices = DevicesController.findDevicesByType(type); //list of devices
                 if (typeDevices.size() != 0) {
                     System.out.println("We have something for you! Here all " + type + "s:");
                     CollectionPrinter.printList(typeDevices);
@@ -178,7 +178,7 @@ public class ConsoleDevices implements View {
 
             case 4:
                 Date releaseDate = DateHelper.readDate(scanner);
-                List<Device> devicesWithThisReleaseTime = DevicesController.findDeviceByReleaseDate(releaseDate);
+                List<Device> devicesWithThisReleaseTime = DevicesController.findDevicesByReleaseDate(releaseDate);
                 if (devicesWithThisReleaseTime.size() != 0) {
                     System.out.println("We have something for you! Here all devices with this releasing date:");
                     CollectionPrinter.printList(devicesWithThisReleaseTime);

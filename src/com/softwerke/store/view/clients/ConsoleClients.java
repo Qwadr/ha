@@ -119,7 +119,7 @@ public class ConsoleClients implements View {
                     System.out.println("Enter full name: ");
 
                     String fullName = reader.readLine();
-                    List<Client> clients = ClientsController.findClientByFullName(fullName);
+                    List<Client> clients = ClientsController.findClientsByFullName(fullName);
                     if (clients.size() != 0) {
                         CollectionPrinter.printList("Success! Info: ", clients);
                     } else {

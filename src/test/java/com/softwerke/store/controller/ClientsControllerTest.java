@@ -35,19 +35,19 @@ public class ClientsControllerTest {
 
     @Test
     public void findNotExistingClientByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientByFullName("1 1 1");
+        List<Client> clients = ClientsController.findClientsByFullName("1 1 1");
         assertEquals(clients.size(), 0);
     }
 
     @Test
     public void findExistingClientByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientByFullName("Fadeev Boris Xavierovich");
+        List<Client> clients = ClientsController.findClientsByFullName("Fadeev Boris Xavierovich");
         assertNotEquals(clients.size(), 0);
     }
 
     @Test
     public void findExistingClientsByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientByFullName("Ivanov Ivan Ivanovich");
+        List<Client> clients = ClientsController.findClientsByFullName("Ivanov Ivan Ivanovich");
         assertEquals(clients.size(), 2);
     }
 

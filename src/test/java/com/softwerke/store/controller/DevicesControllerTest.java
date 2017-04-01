@@ -1,8 +1,13 @@
 package com.softwerke.store.controller;
 
 import com.softwerke.store.controller.main.InitialDataGenerator;
+import com.softwerke.store.controller.main.Store;
+import com.softwerke.store.model.Devices;
+import com.softwerke.store.model.entities.Device;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -16,15 +21,30 @@ public class DevicesControllerTest {
     }
 
     @Test
-    public void getSortedListOfDevices() throws Exception {
+    public void findDeviceByNegativeID() throws Exception {
+        Device device;
+        device = DevicesController.findDeviceByID(-1);
+        assertNull(device);
     }
 
     @Test
-    public void findDeviceByID() throws Exception {
+    public void findDeviceByPositiveID() throws Exception {
+        Device device;
+        device = DevicesController.findDeviceByID(1);
+        assertNotNull(device);
+    }
+
+    @Test
+    public void findDeviceByUncreatedID() throws Exception {
+        Device device;
+        device = DevicesController.findDeviceByID(Integer.MAX_VALUE);
+        assertNull(device);
     }
 
     @Test
     public void findDeviceByBrand() throws Exception {
+        List<Device> devices;
+        devices = DevicesController.findDevicesByBrand("Lenovo");
     }
 
     @Test
@@ -59,4 +79,9 @@ public class DevicesControllerTest {
     public void getListOfDevicesSortedByPrice() throws Exception {
     }
 
+    @Test
+    public void beforeClassAnnotationIsWorking() throws Exception {
+        Devices devices = Store.devices;
+        assertEquals(devices.getListOfDevices().size(), 3);
+    }
 }

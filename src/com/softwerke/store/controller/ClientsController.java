@@ -25,7 +25,7 @@ public class ClientsController {
         return wantedClient;
     }
 
-    public static List<Client> findClientByFullName(String clientFullName) {
+    public static List<Client> findClientsByFullName(String clientFullName) {
         List<Client> wantedClients = new ArrayList<>();
 
         List<Client> allClients = Store.clients.getListOfClients();
@@ -37,7 +37,6 @@ public class ClientsController {
 
         return wantedClients;
     }
-
 
     public static List<Client> getListOfClientsSortedByClientID() {
         List<Client> allClients = Store.clients.getListOfClients();

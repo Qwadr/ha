@@ -57,6 +57,9 @@ public class InitialDataGenerator {
             devices.addDevice(DeviceType.TABLET, "ASUS", "number 88005553535", Color.blue,
                     new BigDecimal(100499), new Date(System.currentTimeMillis()));
 
+            devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L322", Color.black,
+                    new BigDecimal(100501), new Date(System.currentTimeMillis()));
+
             HashMap<Device, Integer> devices = new HashMap<>();
             devices.put(DevicesController.findDeviceByID(1), 2);
             devices.put(DevicesController.findDeviceByID(2), 4);

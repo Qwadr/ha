@@ -1,13 +1,20 @@
 package com.softwerke.store.controller;
 
+import com.softwerke.store.controller.main.InitialDataGenerator;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 /**
- * Created by Qwadr on 01.04.2017 at 21:28.
+ * TODO some javadoc
  */
 public class SalesControllerTest {
+    @BeforeClass
+    public static void setUp() {
+        InitialDataGenerator.addInitialData();
+    }
+
     @Test
     public void findSaleBySaleID() throws Exception {
     }

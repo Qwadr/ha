@@ -34,9 +34,9 @@ public class ClientsControllerTest {
     }
 
     @Test
-    public void findExistingClientsByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientByFullName("Ivanov Ivan Ivanovich");
-        assertEquals(clients.size(), 2);
+    public void findNotExistingClientByFullName() throws Exception {
+        List<Client> clients = ClientsController.findClientByFullName("1 1 1");
+        assertEquals(clients.size(), 0);
     }
 
     @Test
@@ -46,30 +46,73 @@ public class ClientsControllerTest {
     }
 
     @Test
-    public void findNotExistingClientByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientByFullName("1 1 1");
-        assertEquals(clients.size(), 0);
+    public void findExistingClientsByFullName() throws Exception {
+        List<Client> clients = ClientsController.findClientByFullName("Ivanov Ivan Ivanovich");
+        assertEquals(clients.size(), 2);
     }
 
     @Test
     public void getListOfClientsSortedByClientID() throws Exception {
-
+        boolean resultIsCorrect = true;
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByClientID();
+        for (int i = 0; i < sortedClients.size() - 1; i++) {
+            if (sortedClients.get(i).getClientID() > sortedClients.get(i + 1).getClientID()) {
+                resultIsCorrect = false;
+            }
+        }
+        assertEquals(resultIsCorrect, true);
     }
 
     @Test
     public void getListOfClientsSortedByFirstName() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByFirstName();
+        for (int i = 0; i < sortedClients.size() - 1; i++) {
+            if (sortedClients.get(i).getFirstName()
+                    .compareTo(sortedClients.get(i + 1).getFirstName()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertEquals(resultIsCorrect, true);
     }
 
     @Test
     public void getListOfClientsSortedByLastName() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByLastName();
+        for (int i = 0; i < sortedClients.size() - 1; i++) {
+            if (sortedClients.get(i).getLastName()
+                    .compareTo(sortedClients.get(i + 1).getLastName()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertEquals(resultIsCorrect, true);
     }
 
     @Test
     public void getListOfClientsSortedByMiddleName() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByMiddleName();
+        for (int i = 0; i < sortedClients.size() - 1; i++) {
+            if (sortedClients.get(i).getMiddleName()
+                    .compareTo(sortedClients.get(i + 1).getMiddleName()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertEquals(resultIsCorrect, true);
     }
 
     @Test
     public void getListOfClientsSortedByBirthdayDate() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Client> sortedClients = ClientsController.getListOfClientsSortedByBirthdayDate();
+        for (int i = 0; i < sortedClients.size() - 1; i++) {
+            if (sortedClients.get(i).getBirthDate()
+                    .compareTo(sortedClients.get(i + 1).getBirthDate()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertEquals(resultIsCorrect, true);
     }
 
 

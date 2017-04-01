@@ -42,9 +42,11 @@ public class DevicesControllerTest {
     }
 
     @Test
-    public void findDeviceByBrand() throws Exception {
+    public void findExistingDevicesByBrand() throws Exception {
         List<Device> devices;
         devices = DevicesController.findDevicesByBrand("Lenovo");
+        boolean resultIsCorrect = devices.size() > 0;
+        assertTrue(resultIsCorrect);
     }
 
     @Test

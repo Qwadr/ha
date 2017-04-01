@@ -11,7 +11,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-
 public class ClientsControllerTest {
 
     @BeforeClass
@@ -40,15 +39,10 @@ public class ClientsControllerTest {
     }
 
     @Test
-    public void findExistingClientByFullName() throws Exception {
-        List<Client> clients = ClientsController.findClientsByFullName("Fadeev Boris Xavierovich");
-        assertNotEquals(clients.size(), 0);
-    }
-
-    @Test
     public void findExistingClientsByFullName() throws Exception {
         List<Client> clients = ClientsController.findClientsByFullName("Ivanov Ivan Ivanovich");
-        assertEquals(clients.size(), 2);
+        boolean resultIsCorrect = clients.size() > 0;
+        assertTrue(resultIsCorrect);
     }
 
     @Test
@@ -60,7 +54,7 @@ public class ClientsControllerTest {
                 resultIsCorrect = false;
             }
         }
-        assertEquals(resultIsCorrect, true);
+        assertTrue(resultIsCorrect);
     }
 
     @Test
@@ -73,7 +67,7 @@ public class ClientsControllerTest {
                 resultIsCorrect = false;
             }
         }
-        assertEquals(resultIsCorrect, true);
+        assertTrue(resultIsCorrect);
     }
 
     @Test
@@ -86,7 +80,7 @@ public class ClientsControllerTest {
                 resultIsCorrect = false;
             }
         }
-        assertEquals(resultIsCorrect, true);
+        assertTrue(resultIsCorrect);
     }
 
     @Test
@@ -99,7 +93,7 @@ public class ClientsControllerTest {
                 resultIsCorrect = false;
             }
         }
-        assertEquals(resultIsCorrect, true);
+        assertTrue(resultIsCorrect);
     }
 
     @Test
@@ -112,7 +106,7 @@ public class ClientsControllerTest {
                 resultIsCorrect = false;
             }
         }
-        assertEquals(resultIsCorrect, true);
+        assertTrue(resultIsCorrect);
     }
 
 

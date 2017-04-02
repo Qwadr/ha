@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementation of "Clients" DAO interface. More information will be added later.
+ * Implementation of "Clients" DAO interface.
+ * <p>
+ * Class realizes Singleton pattern.
+ * <p>
+ * "addClient" method creates a new client using ClientBuilder.
  */
 public class ClientsImpl implements Clients {
     private static ClientsImpl instance;
@@ -27,9 +31,16 @@ public class ClientsImpl implements Clients {
 
     @Override
     public void addClient(String firstName, String lastName, String middleName, Date birthDate) {
-        clients.add(new Client(firstName, lastName, middleName, birthDate));
+        Client newClient = (new Client.ClientBuilder())
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setMiddleName(middleName)
+                .setBirthDate(birthDate)
+                .build();
+        clients.add(newClient);
     }
 
+    @Override
     public List<Client> getListOfClients() {
         return clients;
     }

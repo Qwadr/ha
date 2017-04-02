@@ -17,13 +17,6 @@ public class Sale {
 
     private static int numberOfSales = 0;
 
-    public Sale(Client client, Date saleDate, Map<Device, Integer> devices) {
-        this.saleID = ++numberOfSales;
-        this.saleDate = saleDate;
-        this.devices = devices;
-        this.client = client;
-    }
-
     public Sale() {
         this.saleID = ++numberOfSales;
     }

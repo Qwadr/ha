@@ -22,16 +22,6 @@ public class Device {
 
     private static int numberOfDevices = 0;
 
-    public Device(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
-        this.deviceID = ++numberOfDevices;
-        this.color = color;
-        this.releaseDate = releaseDate;
-        this.type = type;
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
-    }
-
     public Device() {
         this.deviceID = ++numberOfDevices;
     }

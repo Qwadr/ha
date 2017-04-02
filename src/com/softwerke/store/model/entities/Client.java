@@ -16,14 +16,6 @@ public class Client {
 
     private static int numberOfClients = 0;
 
-    public Client(String firstName, String lastName, String middleName, Date birthDate) {
-        this.clientID = ++numberOfClients;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.birthDate = birthDate;
-    }
-
     public Client() {
         this.clientID = ++numberOfClients;
     }

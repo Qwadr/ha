@@ -11,7 +11,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Implementation of "Sales" DAO interface. More information will be added later.
+ * Implementation of "Sales" DAO interface.
+ * <p>
+ * Class realizes Singleton pattern.
+ * <p>
+ * "addSale" method creates a new client using SaleBuilder.
  */
 public class SalesImpl implements Sales {
     private static SalesImpl instance;
@@ -28,13 +32,18 @@ public class SalesImpl implements Sales {
         return instance;
     }
 
+    @Override
+    public void addSale(Client client, Date saleDate, Map<Device, Integer> devices) {
+        Sale newSale = (new Sale.SaleBuilder())
+                .setClient(client)
+                .setSaleDate(saleDate)
+                .setDevices(devices)
+                .build();
+        sales.add(newSale);
+    }
+
+    @Override
     public List<Sale> getListOfSales() {
         return sales;
     }
-
-    public void addSale(Client client, Date saleDate, Map<Device, Integer> devices) {
-        sales.add(new Sale(client, saleDate, devices));
-    }
-
-
 }

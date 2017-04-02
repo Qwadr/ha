@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementation of "Devices" DAO interface. More information will be added later.
+ * Implementation of "Devices" DAO interface.
+ * <p>
+ * Class realizes Singleton pattern.
+ * <p>
+ * "addDevice" method creates a new client using DeviceBuilder.
  */
 
 public class DevicesImpl implements Devices {
@@ -29,13 +33,21 @@ public class DevicesImpl implements Devices {
         return instance;
     }
 
+    @Override
     public void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
-        devices.add(new Device(type, brand, model, color, price, releaseDate));
+        Device newDevice = (new Device.DeviceBuilder())
+                .setType(type)
+                .setBrand(brand)
+                .setModel(model)
+                .setColor(color)
+                .setPrice(price)
+                .setReleaseDate(releaseDate)
+                .build();
+        devices.add(newDevice);
     }
 
     @Override
     public List<Device> getListOfDevices() {
         return devices;
     }
-
 }

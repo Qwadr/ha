@@ -13,9 +13,6 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-/**
- * TODO some javadoc
- */
 public class DevicesControllerTest {
     @BeforeClass
     public static void setUp() {

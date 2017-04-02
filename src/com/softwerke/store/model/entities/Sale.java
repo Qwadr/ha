@@ -6,7 +6,8 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * "Sale" entity. More information will be added later.
+ * "Sale" entity.
+ * Realizes Builder pattern.
  */
 public class Sale {
     private int saleID;
@@ -14,7 +15,7 @@ public class Sale {
     private Map<Device, Integer> devices;
     private Client client;
 
-    private static int numberOfSales;
+    private static int numberOfSales = 0;
 
     public Sale(Client client, Date saleDate, Map<Device, Integer> devices) {
         this.saleID = ++numberOfSales;
@@ -23,8 +24,19 @@ public class Sale {
         this.client = client;
     }
 
-    public int getSaleID() {
+    public Sale() {
+        this.saleID = ++numberOfSales;
+    }
 
+    public Sale(SaleBuilder builder) {
+        this();
+        this.saleDate = builder.saleDate;
+        this.devices = builder.devices;
+        this.client = builder.client;
+    }
+
+
+    public int getSaleID() {
         return saleID;
     }
 
@@ -55,5 +67,30 @@ public class Sale {
 
     public Client getClient() {
         return client;
+    }
+
+    public static class SaleBuilder {
+        private Date saleDate;
+        private Map<Device, Integer> devices;
+        private Client client;
+
+        public SaleBuilder setSaleDate(Date saleDate) {
+            this.saleDate = saleDate;
+            return this;
+        }
+
+        public SaleBuilder setDevices(Map<Device, Integer> devices) {
+            this.devices = devices;
+            return this;
+        }
+
+        public SaleBuilder setClient(Client client) {
+            this.client = client;
+            return this;
+        }
+
+        public Sale build() {
+            return new Sale(this);
+        }
     }
 }

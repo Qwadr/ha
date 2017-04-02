@@ -35,6 +35,10 @@ public class Device {
         return model;
     }
 
+    public String getFullNameOfModel(){
+        return brand + " " + model;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }

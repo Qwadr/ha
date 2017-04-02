@@ -7,6 +7,8 @@ import com.softwerke.store.model.entities.Device;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -61,42 +63,116 @@ public class DevicesControllerTest {
     }
 
     @Test
-    public void findDeviceByType() throws Exception {
+    public void findExistingDevicesByType() throws Exception {
         List<Device> devices;
-        devices = DevicesController.findDevicesByType("Lenovovo");
+        devices = DevicesController.findDevicesByType("Laptop");
+        assertTrue(devices.size() > 0);
     }
 
     @Test
-    public void findDeviceByReleaseDate() throws Exception {
+    public void findNotExistingDevicesByType() throws Exception {
+        List<Device> devices;
+        devices = DevicesController.findDevicesByType("TopLaptop");
+        assertTrue(devices.size() == 0);
+    }
+    
+    @Test
+    public void findExistingDevicesByReleaseDate() throws Exception {
+        List<Device> devices;
+        Date releaseDate = new Date(System.currentTimeMillis());
+        devices = DevicesController.findDevicesByReleaseDate(releaseDate);
+        assertTrue(devices.size() > 0);
+    }
+
+    @Test
+    public void findNotExistingDevicesByReleaseDate() throws Exception {
+        List<Device> devices;
+        Date releaseDate = new Date(
+                (new SimpleDateFormat("dd-MM-yyyy")).parse("11-11-1111").getTime());
+        devices = DevicesController.findDevicesByReleaseDate(releaseDate);
+        assertTrue(devices.size() == 0);
     }
 
     @Test
     public void getListOfDevicesSortedByDeviceID() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceID();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getDeviceID() > sortedDevices.get(i + 1).getDeviceID()) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void getListOfDevicesSortedByDeviceType() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getType()
+                    .compareTo(sortedDevices.get(i + 1).getType()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void getListOfDevicesSortedByBrand() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getBrand()
+                    .compareTo(sortedDevices.get(i + 1).getBrand()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void getListOfDevicesSortedByModel() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getFullNameOfModel()
+                    .compareTo(sortedDevices.get(i + 1).getFullNameOfModel()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void getListOfDevicesSortedByReleaseDate() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getReleaseDate()
+                    .compareTo(sortedDevices.get(i + 1).getReleaseDate()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void getListOfDevicesSortedByPrice() throws Exception {
+        boolean resultIsCorrect = true;
+        List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByPrice();
+        for (int i = 0; i < sortedDevices.size() - 1; i++) {
+            if (sortedDevices.get(i).getPrice()
+                    .compareTo(sortedDevices.get(i + 1).getPrice()) > 0) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
     }
 
     @Test
     public void beforeClassAnnotationIsWorking() throws Exception {
         Devices devices = Store.devices;
-        assertEquals(devices.getListOfDevices().size(), 3);
+        assertEquals(devices.getListOfDevices().size(), 4);
     }
 }

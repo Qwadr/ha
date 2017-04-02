@@ -51,13 +51,13 @@ public class InitialDataGenerator {
             devices.addDevice(DeviceType.WALKMAN, "Sony", "Walkman UBER9000", Color.white,
                     new BigDecimal(100500), new Date(System.currentTimeMillis()));
 
-            devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L322", Color.black,
-                    new BigDecimal(100501), new Date(System.currentTimeMillis()));
+            devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L323", Color.black,
+                    new BigDecimal(1005010), new Date(System.currentTimeMillis()));
 
             devices.addDevice(DeviceType.TABLET, "ASUS", "number 88005553535", Color.blue,
                     new BigDecimal(100499), new Date(System.currentTimeMillis()));
 
-            devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L322", Color.black,
+            devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L322", Color.green,
                     new BigDecimal(100501), new Date(System.currentTimeMillis()));
 
             HashMap<Device, Integer> devices = new HashMap<>();

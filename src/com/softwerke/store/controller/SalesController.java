@@ -11,7 +11,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Sales controller with realisation of search methods.
+ * Sales controller with realisation of search
+ * and sorting methods.
  */
 public class SalesController {
     public static Sale findSaleBySaleID(int saleID) {

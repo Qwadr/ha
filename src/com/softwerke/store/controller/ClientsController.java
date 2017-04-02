@@ -9,7 +9,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Clients controller with realisation of search methods.
+ * Clients controller with realisation of search
+ * and sorting methods.
  */
 public class ClientsController {
 

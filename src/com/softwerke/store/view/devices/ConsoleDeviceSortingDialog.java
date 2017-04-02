@@ -2,7 +2,7 @@ package com.softwerke.store.view.devices;
 
 import com.softwerke.store.controller.DevicesController;
 import com.softwerke.store.model.entities.Device;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 import com.softwerke.store.view.utils.CollectionPrinter;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  * A part of the console interaction with user about
  * the selection of the device sorting parameters.
  */
-class ConsoleDeviceSortingDialog implements View {
+class ConsoleDeviceSortingDialog implements ConsoleView {
     private static Scanner scanner;
 
     static void start(Scanner reader) {

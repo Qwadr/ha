@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * Created by Qwadr on 22.03.2017 at 20:54.
  */
-public class ConsoleMain implements View {
+public class ConsoleMain implements ConsoleView {
     private boolean running;
     private static Scanner scanner;
 

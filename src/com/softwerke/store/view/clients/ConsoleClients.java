@@ -3,7 +3,7 @@ package com.softwerke.store.view.clients;
 import com.softwerke.store.controller.ClientsController;
 import com.softwerke.store.controller.main.Store;
 import com.softwerke.store.model.entities.Client;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 import com.softwerke.store.view.utils.CollectionPrinter;
 
 import java.io.BufferedReader;
@@ -18,7 +18,7 @@ import java.util.Scanner;
 /**
  * All interaction with user about clients.
  */
-public class ConsoleClients implements View {
+public class ConsoleClients implements ConsoleView {
     private static Scanner scanner;
 
 

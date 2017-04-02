@@ -2,7 +2,7 @@ package com.softwerke.store.view.clients;
 
 import com.softwerke.store.controller.ClientsController;
 import com.softwerke.store.model.entities.Client;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 import com.softwerke.store.view.utils.CollectionPrinter;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  * A part of the console interaction with user about
  * the selection of the client sorting parameters.
  */
-class ConsoleClientsSortingDialog implements View {
+class ConsoleClientsSortingDialog implements ConsoleView {
     private static Scanner scanner;
 
     static void start(Scanner reader) {

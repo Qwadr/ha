@@ -6,7 +6,7 @@ import com.softwerke.store.view.utils.CollectionPrinter;
 import com.softwerke.store.view.utils.DateHelper;
 import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.enums.DeviceType;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 
 import java.awt.Color;
 import java.lang.reflect.Field;
@@ -20,7 +20,7 @@ import java.util.Scanner;
 /**
  * All interaction with user about devices.
  */
-public class ConsoleDevices implements View {
+public class ConsoleDevices implements ConsoleView {
     private static Scanner scanner;
     private static boolean running = false;
 

@@ -9,7 +9,7 @@ import com.softwerke.store.view.utils.DateHelper;
 import com.softwerke.store.model.entities.Client;
 import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.Sale;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 
 import java.sql.Date;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ import java.util.Scanner;
 /**
  * All interaction with user about sales.
  */
-public class ConsoleSales implements View {
+public class ConsoleSales implements ConsoleView {
     private static Scanner scanner;
     private static boolean running = false;
 

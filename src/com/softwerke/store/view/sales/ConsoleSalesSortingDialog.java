@@ -2,7 +2,7 @@ package com.softwerke.store.view.sales;
 
 import com.softwerke.store.controller.SalesController;
 import com.softwerke.store.model.entities.Sale;
-import com.softwerke.store.view.View;
+import com.softwerke.store.view.ConsoleView;
 import com.softwerke.store.view.utils.CollectionPrinter;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  * A part of the console interaction with user about
  * the selection of the sale sorting parameters.
  */
-class ConsoleSalesSortingDialog implements View {
+class ConsoleSalesSortingDialog implements ConsoleView {
     private static Scanner scanner;
 
     static void start(Scanner reader) {

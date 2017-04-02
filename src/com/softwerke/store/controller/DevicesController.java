@@ -9,7 +9,8 @@ import java.util.*;
 import java.util.List;
 
 /**
- * Devices controller with realisation of search methods.
+ * Devices controller with realisation of search
+ * and sorting methods.
  */
 public class DevicesController {
     public static Device findDeviceByID(int DeviceID) {

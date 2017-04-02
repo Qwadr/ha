@@ -8,12 +8,43 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
- * "Device" entity. More information will be added later.
+ * "Device" entity.
+ * Realizes Builder pattern.
  */
 public class Device {
     private int deviceID;
     private Color color;
     private Date releaseDate;
+    private DeviceType type;
+    private String brand;
+    private String model;
+    private BigDecimal price;
+
+    private static int numberOfDevices = 0;
+
+    public Device(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
+        this.deviceID = ++numberOfDevices;
+        this.color = color;
+        this.releaseDate = releaseDate;
+        this.type = type;
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+    }
+
+    public Device() {
+        this.deviceID = ++numberOfDevices;
+    }
+
+    public Device(DeviceBuilder builder) {
+        this();
+        this.color = builder.color;
+        this.releaseDate = builder.releaseDate;
+        this.type = builder.type;
+        this.brand = builder.brand;
+        this.model = builder.model;
+        this.price = builder.price;
+    }
 
     public Color getColor() {
         return color;
@@ -35,29 +66,12 @@ public class Device {
         return model;
     }
 
-    public String getFullNameOfModel(){
+    public String getFullNameOfModel() {
         return brand + " " + model;
     }
 
     public BigDecimal getPrice() {
         return price;
-    }
-
-    private DeviceType type;
-    private String brand;
-    private String model;
-    private BigDecimal price;
-
-    private static int numberOfDevices;
-
-    public Device(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
-        this.deviceID = ++numberOfDevices;
-        this.color = color;
-        this.releaseDate = releaseDate;
-        this.type = type;
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
     }
 
     public int getDeviceID() {
@@ -79,5 +93,46 @@ public class Device {
         return sb.toString();
     }
 
+    public static class DeviceBuilder {
+        private Color color;
+        private Date releaseDate;
+        private DeviceType type;
+        private String brand;
+        private String model;
+        private BigDecimal price;
 
+        public DeviceBuilder setColor(Color color) {
+            this.color = color;
+            return this;
+        }
+
+        public DeviceBuilder setReleaseDate(Date releaseDate) {
+            this.releaseDate = releaseDate;
+            return this;
+        }
+
+        public DeviceBuilder setType(DeviceType type) {
+            this.type = type;
+            return this;
+        }
+
+        public DeviceBuilder setBrand(String brand) {
+            this.brand = brand;
+            return this;
+        }
+
+        public DeviceBuilder setModel(String model) {
+            this.model = model;
+            return this;
+        }
+
+        public DeviceBuilder setPrice(BigDecimal price) {
+            this.price = price;
+            return this;
+        }
+
+        public Device build() {
+            return new Device(this);
+        }
+    }
 }

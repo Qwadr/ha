@@ -4,7 +4,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
- * "Client" entity. More information will be added later.
+ * "Client" entity.
+ * Realizes Builder pattern.
  */
 public class Client {
     private int clientID;
@@ -13,7 +14,7 @@ public class Client {
     private String middleName;
     private Date birthDate;
 
-    private static int numberOfClients;
+    private static int numberOfClients = 0;
 
     public Client(String firstName, String lastName, String middleName, Date birthDate) {
         this.clientID = ++numberOfClients;
@@ -21,6 +22,18 @@ public class Client {
         this.lastName = lastName;
         this.middleName = middleName;
         this.birthDate = birthDate;
+    }
+
+    public Client() {
+        this.clientID = ++numberOfClients;
+    }
+
+    public Client(ClientBuilder builder) {
+        this();
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.middleName = builder.middleName;
+        this.birthDate = builder.birthDate;
     }
 
     public int getClientID() {
@@ -39,12 +52,12 @@ public class Client {
         return middleName;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public String getFullName() {
+        return lastName + " " + firstName + " " + middleName;
     }
 
-    public String getFullName(){
-        return lastName + " " + firstName + " " + middleName;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
     @Override
@@ -59,5 +72,36 @@ public class Client {
                 .append((new SimpleDateFormat("dd.MM.yyyy")).format(birthDate))
                 .append(".");
         return sb.toString();
+    }
+
+    public static class ClientBuilder {
+        private String firstName;
+        private String lastName;
+        private String middleName;
+        private Date birthDate;
+
+        public ClientBuilder setFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public ClientBuilder setLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public ClientBuilder setMiddleName(String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+
+        public ClientBuilder setBirthDate(Date birthDate) {
+            this.birthDate = birthDate;
+            return this;
+        }
+
+        public Client build() {
+            return new Client(this);
+        }
     }
 }

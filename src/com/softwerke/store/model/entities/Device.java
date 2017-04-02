@@ -22,6 +22,7 @@ public class Device {
 
     private static int numberOfDevices = 0;
 
+
     public Device(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate) {
         this.deviceID = ++numberOfDevices;
         this.color = color;
@@ -45,6 +46,7 @@ public class Device {
         this.model = builder.model;
         this.price = builder.price;
     }
+
 
     public Color getColor() {
         return color;

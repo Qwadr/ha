@@ -68,7 +68,16 @@ public class InitialDataGenerator {
             sales.addSale(ClientsController.findClientByID(1),
                     new Date(System.currentTimeMillis()), devices);
 
-        } catch (ParseException allDataIsCorrect) {
+            devices = new HashMap<>();
+            devices.put(DevicesController.findDeviceByID(1), 1);
+            devices.put(DevicesController.findDeviceByID(2), 3);
+            devices.put(DevicesController.findDeviceByID(3), 17);
+            devices.put(DevicesController.findDeviceByID(4), 27); // 48 devices summary
+            Date dateOfSecondSale = new Date((new SimpleDateFormat("dd-MM-yyyy")).parse("11-11-1950").getTime());
+
+            sales.addSale(ClientsController.findClientByID(3), dateOfSecondSale, devices);
+
+        } catch (ParseException ignoredBecauseAllDataIsCorrect) {
             //ignored
         }
     }

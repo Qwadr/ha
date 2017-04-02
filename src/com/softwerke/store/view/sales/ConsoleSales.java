@@ -138,7 +138,7 @@ public class ConsoleSales implements View {
 
             case 3:
                 Date date = DateHelper.readDate(scanner);
-                List<Sale> salesInThisDay = SalesController.findSaleByDate(date); //Sale sale
+                List<Sale> salesInThisDay = SalesController.findSalesByDate(date); //Sale sale
                 if (salesInThisDay.size() != 0) {
                     System.out.println("We have something for you! Here all sales of this day:");
                     CollectionPrinter.printList(salesInThisDay);

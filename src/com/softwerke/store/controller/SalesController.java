@@ -2,6 +2,7 @@ package com.softwerke.store.controller;
 
 import com.softwerke.store.controller.main.Store;
 import com.softwerke.store.model.entities.Sale;
+import com.softwerke.store.view.utils.DateHelper;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -26,12 +27,12 @@ public class SalesController {
         return wantedSale;
     }
 
-    public static List<Sale> findSaleByDate(Date date) {
+    public static List<Sale> findSalesByDate(Date date) {
         List<Sale> wantedSales = new ArrayList<>();
         List<Sale> allSales = Store.sales.getListOfSales();
 
         for (Sale sale : allSales) {
-            if (sale.getSaleDate() == date) {
+            if (DateHelper.datesAreInOneDay(sale.getSaleDate(), date)) {
                 wantedSales.add(sale);
             }
         }

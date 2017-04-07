@@ -39,12 +39,25 @@ public class ClientsController {
         return wantedClients;
     }
 
+    public static List<Client> findClientsByPartOfFullName(String partOfFullName) {
+        List<Client> wantedClients = new ArrayList<>();
+
+        List<Client> allClients = Store.clients.getListOfClients();
+        for (Client client : allClients) {
+            if (client.getFullName().toLowerCase().contains(partOfFullName.toLowerCase())) {
+                wantedClients.add(client);
+            }
+        }
+
+        return wantedClients;
+    }
+
     public static List<Client> getListOfClientsSortedByClientID() {
         List<Client> allClients = Store.clients.getListOfClients();
         Collections.sort(allClients, new Comparator<Client>() {
             @Override
             public int compare(Client o1, Client o2) {
-                return Integer.compare(o1.getClientID(),o2.getClientID());
+                return Integer.compare(o1.getClientID(), o2.getClientID());
             }
         });
         return allClients;
@@ -79,6 +92,17 @@ public class ClientsController {
             @Override
             public int compare(Client o1, Client o2) {
                 return o1.getMiddleName().compareTo(o2.getMiddleName());
+            }
+        });
+        return allClients;
+    }
+
+    public static List<Client> getListOfClientsSortedByFullName() {
+        List<Client> allClients = Store.clients.getListOfClients();
+        Collections.sort(allClients, new Comparator<Client>() {
+            @Override
+            public int compare(Client o1, Client o2) {
+                return o1.getFullName().compareTo(o2.getFullName());
             }
         });
         return allClients;

@@ -4,9 +4,20 @@ package com.softwerke.store.model.entities.enums;
  * All variations of device types.
  */
 public enum DeviceType {
-    TELEPHONE,
+    PHONE,
     TABLET,
     LAPTOP,
-    WALKMAN,
-    NOT_INITIALIZED
+    PLAYER,
+    NOT_INITIALIZED;
+
+    public static DeviceType getDeviceType(String stringDeviceType) {
+        DeviceType answer = NOT_INITIALIZED;
+        for (DeviceType deviceType : DeviceType.values()) {
+            if (stringDeviceType.trim().toLowerCase()
+                    .equals(deviceType.name().toLowerCase())) {
+                answer = deviceType;
+            }
+        }
+        return answer;
+    }
 }

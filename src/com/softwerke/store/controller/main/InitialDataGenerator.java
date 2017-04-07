@@ -48,7 +48,7 @@ public class InitialDataGenerator {
             clients.addClient("Ivan", "Ivanov", "Ivanovich",
                     new Date((new SimpleDateFormat("dd-MM-yyyy")).parse("11-11-1950").getTime()));
 
-            devices.addDevice(DeviceType.WALKMAN, "Sony", "Walkman UBER9000", Color.white,
+            devices.addDevice(DeviceType.PLAYER, "Sony", "Walkman UBER9000", Color.white,
                     new BigDecimal(100500), new Date(System.currentTimeMillis()));
 
             devices.addDevice(DeviceType.LAPTOP, "Lenovo", "IdeaPad L323", Color.black,

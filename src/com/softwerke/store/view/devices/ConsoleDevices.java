@@ -79,7 +79,7 @@ public class ConsoleDevices implements ConsoleView {
         DeviceType deviceType = DeviceType.NOT_INITIALIZED;
         switch (choice) {
             case 1:
-                deviceType = DeviceType.TELEPHONE;
+                deviceType = DeviceType.PHONE;
                 break;
             case 2:
                 deviceType = DeviceType.TABLET;
@@ -88,7 +88,7 @@ public class ConsoleDevices implements ConsoleView {
                 deviceType = DeviceType.LAPTOP;
                 break;
             case 4:
-                deviceType = DeviceType.WALKMAN;
+                deviceType = DeviceType.PLAYER;
         }
 
         System.out.println("Brand: ");

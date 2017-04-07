@@ -96,4 +96,18 @@ public class Client {
             return new Client(this);
         }
     }
+
+
+    @Override
+    protected Client clone() throws CloneNotSupportedException {
+        Client copyOfClient = (Client) super.clone();
+
+        copyOfClient.clientID = this.clientID;
+        copyOfClient.birthDate = (Date) this.birthDate.clone();
+        copyOfClient.firstName = this.firstName;
+        copyOfClient.middleName = this.middleName;
+        copyOfClient.lastName = this.lastName;
+
+        return copyOfClient;
+    }
 }

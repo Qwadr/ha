@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * "Sale" entity.
@@ -83,5 +84,18 @@ public class Sale {
         public Sale build() {
             return new Sale(this);
         }
+    }
+
+    @Override
+    protected Sale clone() throws CloneNotSupportedException {
+        Sale copyOfSale = (Sale) super.clone();
+
+        copyOfSale.saleID = this.saleID;
+        copyOfSale.saleDate = (Date)this.saleDate.clone();
+        copyOfSale.devices = this.devices.entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        copyOfSale.client = this.client.clone();
+
+        return copyOfSale;
     }
 }

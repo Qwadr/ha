@@ -1,6 +1,6 @@
 # ha
 
-Khazipov Airat's repository.
+[Khazipov Airat](https://github.com/Qwadr)'s repository.
 
 Entry point of program: com.softwerke.store.controller.main.Store
 

@@ -13,8 +13,20 @@ import java.util.List;
  */
 public interface Devices {
 
+    /**
+     * Create new device.
+     *
+     * @param type        - type of device: LAPTOP, PHONE, PLAYER or TABLET
+     * @param brand       - device brand, any String
+     * @param model       - device model, any String
+     * @param color       - java.awt.Color only
+     * @param releaseDate - date of device issue, java.util.Date
+     */
     void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate);
 
+    /**
+     * Getting a list of all devices in the system.
+     */
     List<Device> getListOfDevices();
 }
 

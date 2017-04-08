@@ -13,7 +13,17 @@ import java.util.Map;
  */
 public interface Sales {
 
+    /**
+     * Create new sale.
+     *
+     * @param client      - exemplar of Client
+     * @param saleDate    - date of sale, java.util.Date
+     * @param devices     - map of device-count pairs
+     */
     void addSale(Client client, Date saleDate, Map<Device, Integer> devices);
 
+    /**
+     * Getting a list of all sales in the system.
+     */
     List<Sale> getListOfSales();
 }

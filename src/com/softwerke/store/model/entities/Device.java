@@ -125,19 +125,4 @@ public class Device {
             return new Device(this);
         }
     }
-
-    @Override
-    protected Device clone() throws CloneNotSupportedException {
-        Device copyOfDevice = (Device) super.clone();
-
-        copyOfDevice.deviceID = this.deviceID;
-        copyOfDevice.color= this.color;
-        copyOfDevice.releaseDate = (Date)this.releaseDate.clone();
-        copyOfDevice.type = this.type;
-        copyOfDevice.brand = this.brand;
-        copyOfDevice.model = this.model;
-        copyOfDevice.price = new BigDecimal(this.price.toBigInteger());
-
-        return copyOfDevice;
-    }
 }

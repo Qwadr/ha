@@ -18,11 +18,11 @@ public class Sale {
 
     private static int numberOfSales = 0;
 
-    public Sale() {
+    private Sale() {
         this.saleID = ++numberOfSales;
     }
 
-    public Sale(SaleBuilder builder) {
+    private Sale(SaleBuilder builder) {
         this();
         this.saleDate = builder.saleDate;
         this.devices = builder.devices;
@@ -84,18 +84,5 @@ public class Sale {
         public Sale build() {
             return new Sale(this);
         }
-    }
-
-    @Override
-    protected Sale clone() throws CloneNotSupportedException {
-        Sale copyOfSale = (Sale) super.clone();
-
-        copyOfSale.saleID = this.saleID;
-        copyOfSale.saleDate = (Date)this.saleDate.clone();
-        copyOfSale.devices = this.devices.entrySet().stream()
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-        copyOfSale.client = this.client.clone();
-
-        return copyOfSale;
     }
 }

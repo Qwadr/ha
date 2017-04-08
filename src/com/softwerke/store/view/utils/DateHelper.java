@@ -2,7 +2,7 @@ package com.softwerke.store.view.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class DateHelper {
         while (!correctValue) {
             try {
                 System.out.println("Enter date (in \"dd-mm-yyyy\" format): ");
-                answer = new java.sql.Date(
+                answer = new java.util.Date(
                         (new SimpleDateFormat("dd-MM-yyyy")).parse(scanner.next()).getTime());
                 correctValue = true;
             } catch (ParseException e) {

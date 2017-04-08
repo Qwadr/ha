@@ -19,18 +19,18 @@ import java.util.List;
  */
 public class IDeviceStoreImpl implements IDeviceStore {
     @Override
-    public void addClient(String lastName, String firstName, String middleName, java.sql.Date birthDate) {
+    public void addClient(String lastName, String firstName, String middleName, java.util.Date birthDate) {
         Store.clients.addClient(firstName, lastName, middleName, birthDate);
     }
 
     @Override
-    public void addDevice(String type, String brand, String model, Color color, java.sql.Date issueDate) {
+    public void addDevice(String type, String brand, String model, Color color, java.util.Date issueDate) {
         DeviceType deviceType = DeviceType.getDeviceType(type);
         Store.devices.addDevice(deviceType, brand, model, color, new BigDecimal(0), issueDate);
     }
 
     @Override
-    public void addSale(java.sql.Date saleDate, Integer clientId, Map<Integer, Integer> deviceIdAndQuantity) {
+    public void addSale(java.util.Date saleDate, Integer clientId, Map<Integer, Integer> deviceIdAndQuantity) {
         Client client = ClientsController.findClientByID(clientId);
         Map<Device, Integer> deviceMap = new HashMap<>();
 
@@ -48,7 +48,7 @@ public class IDeviceStoreImpl implements IDeviceStore {
     }
 
     @Override
-    public void searchDevicesByIssueDate(java.sql.Date issueDate) {
+    public void searchDevicesByIssueDate(java.util.Date issueDate) {
         List<Device> devices = DevicesController.findDevicesByReleaseDate(issueDate);
     }
 

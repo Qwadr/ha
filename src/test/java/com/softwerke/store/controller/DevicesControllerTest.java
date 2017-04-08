@@ -7,7 +7,7 @@ import com.softwerke.store.model.entities.Device;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 

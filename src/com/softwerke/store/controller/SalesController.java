@@ -4,7 +4,7 @@ import com.softwerke.store.controller.main.Store;
 import com.softwerke.store.model.entities.Sale;
 import com.softwerke.store.view.utils.DateHelper;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

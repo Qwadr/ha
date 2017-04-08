@@ -5,7 +5,7 @@ import com.softwerke.store.model.entities.Client;
 import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.Sale;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

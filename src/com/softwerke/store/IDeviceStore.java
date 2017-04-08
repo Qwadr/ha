@@ -9,7 +9,7 @@ public interface IDeviceStore {
      * @param middleName - like Ivanovich
      * @param birthDate  - like 01.01.1990
      */
-    void addClient(String lastName, String firstName, String middleName, java.sql.Date birthDate);
+    void addClient(String lastName, String firstName, String middleName, java.util.Date birthDate);
 
     /**
      * Create new device
@@ -20,7 +20,7 @@ public interface IDeviceStore {
      * @param color     - java.awt.Color only
      * @param issueDate - date of device issue
      */
-    void addDevice(String type, String brand, String model, java.awt.Color color, java.sql.Date issueDate);
+    void addDevice(String type, String brand, String model, java.awt.Color color, java.util.Date issueDate);
 
     /**
      * Create new sale
@@ -29,7 +29,7 @@ public interface IDeviceStore {
      * @param clientId            - id of the client
      * @param deviceIdAndQuantity - map of device id and its quantity
      */
-    void addSale(java.sql.Date saleDate, Integer clientId, java.util.Map<Integer, Integer> deviceIdAndQuantity);
+    void addSale(java.util.Date saleDate, Integer clientId, java.util.Map<Integer, Integer> deviceIdAndQuantity);
 
     /**
      * Search clients by any name (last name, first name or middle name)
@@ -43,7 +43,7 @@ public interface IDeviceStore {
      *
      * @param issueDate - date of device issue
      */
-    void searchDevicesByIssueDate(java.sql.Date issueDate);
+    void searchDevicesByIssueDate(java.util.Date issueDate);
 
     /**
      * Sort clients by name

@@ -9,7 +9,7 @@ import com.softwerke.store.view.utils.CollectionPrinter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;

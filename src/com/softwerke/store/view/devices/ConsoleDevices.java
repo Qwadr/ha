@@ -11,7 +11,7 @@ import com.softwerke.store.view.ConsoleView;
 import java.awt.Color;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;

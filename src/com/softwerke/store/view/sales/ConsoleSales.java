@@ -11,7 +11,7 @@ import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.Sale;
 import com.softwerke.store.view.ConsoleView;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

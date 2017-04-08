@@ -2,7 +2,7 @@ package com.softwerke.store.model;
 
 import com.softwerke.store.model.entities.Client;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 /**

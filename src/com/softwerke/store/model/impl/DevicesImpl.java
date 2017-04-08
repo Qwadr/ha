@@ -6,7 +6,7 @@ import com.softwerke.store.model.entities.enums.DeviceType;
 
 import java.awt.Color;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 

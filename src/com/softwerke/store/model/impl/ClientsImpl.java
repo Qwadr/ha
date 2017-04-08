@@ -3,7 +3,7 @@ package com.softwerke.store.model.impl;
 import com.softwerke.store.model.Clients;
 import com.softwerke.store.model.entities.Client;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 

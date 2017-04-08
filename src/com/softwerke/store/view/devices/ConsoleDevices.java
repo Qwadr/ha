@@ -19,6 +19,7 @@ import java.util.Scanner;
 
 /**
  * All interaction with user about devices.
+ * Main operations: create, show all, sort, find, back to main menu.
  */
 public class ConsoleDevices implements ConsoleView {
     private static Scanner scanner;

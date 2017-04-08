@@ -13,6 +13,8 @@ import java.util.Map;
 /**
  * Implementation of "Sales" DAO interface.
  * <p>
+ * This class is the main storage of all sales.
+ * <p>
  * Class realizes Singleton pattern.
  * <p>
  * "addSale" method creates a new client using SaleBuilder.
@@ -25,6 +27,9 @@ public class SalesImpl implements Sales {
         sales = new ArrayList<>();
     }
 
+    /**
+     * Classical not multithreaded Singleton.
+     */
     public static SalesImpl getInstance() {
         if (instance == null) {
             instance = new SalesImpl();
@@ -32,6 +37,12 @@ public class SalesImpl implements Sales {
         return instance;
     }
 
+    /**
+     * Creating a new sale using SaleBuilder.
+     * @param client      - exemplar of Client
+     * @param saleDate    - date of sale, java.util.Date
+     * @param devices     - map of device-count pairs
+     */
     @Override
     public void addSale(Client client, Date saleDate, Map<Device, Integer> devices) {
         Sale newSale = (new Sale.SaleBuilder())

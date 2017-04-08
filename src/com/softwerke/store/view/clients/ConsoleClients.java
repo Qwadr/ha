@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 /**
  * All interaction with user about clients.
+ * Main operations: create, show all, sort, find, back to main menu.
  */
 public class ConsoleClients implements ConsoleView {
     private static Scanner scanner;

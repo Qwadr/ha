@@ -14,6 +14,7 @@ import static java.util.Calendar.YEAR;
  * A utility that helps in working with dates.
  */
 public class DateHelper {
+
     public static Date readDate(Scanner scanner) {
         Date answer = null;
         boolean correctValue = false;
@@ -29,7 +30,6 @@ public class DateHelper {
         }
         return answer;
     }
-
 
     public static boolean datesAreInOneDay(Date date1, Date date2) {
         Calendar calendar1 = Calendar.getInstance();

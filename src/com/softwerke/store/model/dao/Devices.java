@@ -20,6 +20,7 @@ public interface Devices {
      * @param brand       - device brand, any String
      * @param model       - device model, any String
      * @param color       - java.awt.Color only
+     * @param price       - the price of one device, BigDecimal (for high accuracy)
      * @param releaseDate - date of device issue, java.util.Date
      */
     void addDevice(DeviceType type, String brand, String model, Color color, BigDecimal price, Date releaseDate);

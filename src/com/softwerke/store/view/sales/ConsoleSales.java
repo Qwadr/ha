@@ -19,6 +19,7 @@ import java.util.Scanner;
 
 /**
  * All interaction with user about sales.
+ * Main operations: create, show all, sort, find, back to main menu.
  */
 public class ConsoleSales implements ConsoleView {
     private static Scanner scanner;

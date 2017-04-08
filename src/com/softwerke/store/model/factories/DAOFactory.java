@@ -8,7 +8,7 @@ import com.softwerke.store.model.daoimpl.DevicesImpl;
 import com.softwerke.store.model.daoimpl.SalesImpl;
 
 /**
- * Class outputs realisations of three main interfaces.
+ * Class outputs realisations of three main DAO interfaces.
  */
 public class DAOFactory {
     public static Clients getExemplarOfClientsClass() {

@@ -7,7 +7,7 @@ import com.softwerke.store.view.sales.ConsoleSales;
 import java.util.Scanner;
 
 /**
- * Created by Qwadr on 22.03.2017 at 20:54.
+ * Main menu of console interaction.
  */
 public class ConsoleMain implements ConsoleView {
     private boolean running;

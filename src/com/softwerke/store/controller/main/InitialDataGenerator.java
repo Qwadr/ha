@@ -2,9 +2,9 @@ package com.softwerke.store.controller.main;
 
 import com.softwerke.store.controller.ClientsController;
 import com.softwerke.store.controller.DevicesController;
-import com.softwerke.store.model.Clients;
-import com.softwerke.store.model.Devices;
-import com.softwerke.store.model.Sales;
+import com.softwerke.store.model.dao.Clients;
+import com.softwerke.store.model.dao.Devices;
+import com.softwerke.store.model.dao.Sales;
 import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.enums.DeviceType;
 import com.softwerke.store.model.factories.DAOFactory;

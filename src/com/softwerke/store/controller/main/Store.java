@@ -1,9 +1,9 @@
 package com.softwerke.store.controller.main;
 
 import com.softwerke.store.view.ConsoleMain;
-import com.softwerke.store.model.Clients;
-import com.softwerke.store.model.Devices;
-import com.softwerke.store.model.Sales;
+import com.softwerke.store.model.dao.Clients;
+import com.softwerke.store.model.dao.Devices;
+import com.softwerke.store.model.dao.Sales;
 
 import java.text.ParseException;
 

@@ -1,4 +1,4 @@
-package com.softwerke.store.model;
+package com.softwerke.store.model.dao;
 
 import com.softwerke.store.model.entities.Client;
 

@@ -2,7 +2,7 @@ package com.softwerke.store.controller;
 
 import com.softwerke.store.controller.main.InitialDataGenerator;
 import com.softwerke.store.controller.main.Store;
-import com.softwerke.store.model.Clients;
+import com.softwerke.store.model.dao.Clients;
 import com.softwerke.store.model.entities.Client;
 import org.junit.BeforeClass;
 import org.junit.Test;

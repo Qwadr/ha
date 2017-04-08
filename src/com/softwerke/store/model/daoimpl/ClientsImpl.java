@@ -1,6 +1,6 @@
-package com.softwerke.store.model.impl;
+package com.softwerke.store.model.daoimpl;
 
-import com.softwerke.store.model.Clients;
+import com.softwerke.store.model.dao.Clients;
 import com.softwerke.store.model.entities.Client;
 
 import java.util.Date;

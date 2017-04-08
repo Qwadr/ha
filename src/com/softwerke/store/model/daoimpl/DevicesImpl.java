@@ -1,6 +1,6 @@
-package com.softwerke.store.model.impl;
+package com.softwerke.store.model.daoimpl;
 
-import com.softwerke.store.model.Devices;
+import com.softwerke.store.model.dao.Devices;
 import com.softwerke.store.model.entities.Device;
 import com.softwerke.store.model.entities.enums.DeviceType;
 

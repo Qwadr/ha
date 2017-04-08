@@ -1,11 +1,11 @@
 package com.softwerke.store.model.factories;
 
-import com.softwerke.store.model.Clients;
-import com.softwerke.store.model.Devices;
-import com.softwerke.store.model.Sales;
-import com.softwerke.store.model.impl.ClientsImpl;
-import com.softwerke.store.model.impl.DevicesImpl;
-import com.softwerke.store.model.impl.SalesImpl;
+import com.softwerke.store.model.dao.Clients;
+import com.softwerke.store.model.dao.Devices;
+import com.softwerke.store.model.dao.Sales;
+import com.softwerke.store.model.daoimpl.ClientsImpl;
+import com.softwerke.store.model.daoimpl.DevicesImpl;
+import com.softwerke.store.model.daoimpl.SalesImpl;
 
 /**
  * Class outputs realisations of three main interfaces.

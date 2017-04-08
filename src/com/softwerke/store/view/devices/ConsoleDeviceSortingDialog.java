@@ -52,27 +52,27 @@ class ConsoleDeviceSortingDialog implements ConsoleView {
 
     private static void printDevicesSortedByDeviceID() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceID();
-        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
+        CollectionPrinter.printList("Devices, sorted by device ID:", sortedDevices);
     }
 
     private static void printDevicesSortedByDeviceType() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByDeviceType();
-        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
+        CollectionPrinter.printList("Devices, sorted by type:", sortedDevices);
     }
 
     private static void printDevicesSortedByBrand() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByBrand();
-        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
+        CollectionPrinter.printList("Devices, sorted by brand:", sortedDevices);
     }
 
     private static void printDevicesSortedByModel() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByModel();
-        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
+        CollectionPrinter.printList("Devices, sorted by model:", sortedDevices);
     }
 
     private static void printDevicesSortedByReleaseDate() {
         List<Device> sortedDevices = DevicesController.getListOfDevicesSortedByReleaseDate();
-        CollectionPrinter.printList("Devices, sorted by price:", sortedDevices);
+        CollectionPrinter.printList("Devices, sorted by release date:", sortedDevices);
     }
 
     private static void printDevicesSortedByPrice() {
